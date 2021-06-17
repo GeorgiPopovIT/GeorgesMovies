@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 
-
 namespace GeorgesMovies.Models.Models
 {
-    public class Actor
+   public class Director
     {
-        public Actor()
+        public Director()
         {
             this.Movies = new HashSet<Movie>();
         }
@@ -15,9 +14,9 @@ namespace GeorgesMovies.Models.Models
 
         public string LastName { get; set; }
 
-        public string Gender { get; set; }
 
 
         public ICollection<Movie> Movies { get; set; }
+
     }
 }

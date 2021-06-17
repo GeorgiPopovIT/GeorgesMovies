@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GeorgesMovies.Models.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GeorgesMovies.Models.Data
 {
@@ -9,11 +10,15 @@ namespace GeorgesMovies.Models.Data
 
         }
         public GeorgesMovieDbContext(DbContextOptions options)
-            :base(options)
+            : base(options)
         {
 
         }
-
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Actor> Actors { get; set; }
+        public DbSet<Director> Directors { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -22,6 +27,10 @@ namespace GeorgesMovies.Models.Data
                 optionsBuilder.UseSqlServer("Server=.;Database = GeorgesMovies;Integrated Security = true;");
             }
             base.OnConfiguring(optionsBuilder);
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

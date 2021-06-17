@@ -1,0 +1,15 @@
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\bin\Debug\net5.0\GeorgesMovies.Models.deps.json
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\bin\Debug\net5.0\GeorgesMovies.Models.runtimeconfig.json
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\bin\Debug\net5.0\GeorgesMovies.Models.runtimeconfig.dev.json
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\bin\Debug\net5.0\GeorgesMovies.Models.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\bin\Debug\net5.0\ref\GeorgesMovies.Models.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\bin\Debug\net5.0\GeorgesMovies.Models.pdb
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Debug\net5.0\GeorgesMovies.Models.csprojAssemblyReference.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Debug\net5.0\GeorgesMovies.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Debug\net5.0\GeorgesMovies.Models.AssemblyInfoInputs.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Debug\net5.0\GeorgesMovies.Models.AssemblyInfo.cs
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Debug\net5.0\GeorgesMovies.Models.csproj.CoreCompileInputs.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Debug\net5.0\GeorgesMovies.Models.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Debug\net5.0\ref\GeorgesMovies.Models.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Debug\net5.0\GeorgesMovies.Models.pdb
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Debug\net5.0\GeorgesMovies.Models.genruntimeconfig.cache
