@@ -15,8 +15,6 @@ namespace GeorgesMovies.Models.Models
         public string LastName { get; set; }
 
 
-
         public ICollection<Movie> Movies { get; set; }
-
     }
 }
