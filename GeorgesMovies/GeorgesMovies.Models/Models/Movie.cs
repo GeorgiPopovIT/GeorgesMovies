@@ -7,6 +7,7 @@ namespace GeorgesMovies.Models.Models
     {
         public Movie()
         {
+            this.Users = new HashSet<User>();
             this.Genres = new HashSet<Genre>();
             this.Actors = new HashSet<Actor>();
             this.Directors = new HashSet<Director>();
@@ -27,10 +28,9 @@ namespace GeorgesMovies.Models.Models
 
         public string CountryRelease { get; set; }
 
-        public int RatingId { get; set; }
-        public Rating Rating { get; set; }
+        public int Rating { get; set; }
 
-
+        public ICollection<User> Users { get; set; }
         public ICollection<Genre> Genres { get; set; }
         public ICollection<Actor> Actors { get; set; }
         public ICollection<Director> Directors { get; set; }
