@@ -4,14 +4,16 @@ using GeorgesMovies.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GeorgesMovies.Models.Migrations
 {
     [DbContext(typeof(GeorgesMovieDbContext))]
-    partial class GeorgesMovieDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210621141633_AddUserAndCommentsTabels")]
+    partial class AddUserAndCommentsTabels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -95,9 +97,6 @@ namespace GeorgesMovies.Models.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("MovieId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
 
@@ -105,8 +104,6 @@ namespace GeorgesMovies.Models.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
 
                     b.HasIndex("UserId");
 
@@ -265,19 +262,11 @@ namespace GeorgesMovies.Models.Migrations
 
             modelBuilder.Entity("GeorgesMovies.Models.Models.Comment", b =>
                 {
-                    b.HasOne("GeorgesMovies.Models.Models.Movie", "Movie")
-                        .WithMany("Comments")
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("GeorgesMovies.Models.Models.User", "User")
                         .WithMany("Comments")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Movie");
 
                     b.Navigation("User");
                 });
@@ -295,11 +284,6 @@ namespace GeorgesMovies.Models.Migrations
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("GeorgesMovies.Models.Models.Movie", b =>
-                {
-                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("GeorgesMovies.Models.Models.User", b =>

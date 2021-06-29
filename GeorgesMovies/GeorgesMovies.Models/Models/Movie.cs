@@ -11,6 +11,7 @@ namespace GeorgesMovies.Models.Models
             this.Genres = new HashSet<Genre>();
             this.Actors = new HashSet<Actor>();
             this.Directors = new HashSet<Director>();
+            this.Comments = new HashSet<Comment>();
         }
         public int Id { get; set; }
 
@@ -34,5 +35,6 @@ namespace GeorgesMovies.Models.Models
         public ICollection<Genre> Genres { get; set; }
         public ICollection<Actor> Actors { get; set; }
         public ICollection<Director> Directors { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }
