@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GeorgesMovies.Models.Migrations
 {
-    [DbContext(typeof(GeorgesMovieDbContext))]
+    [DbContext(typeof(GeorgesMoviesDbContext))]
     [Migration("20210617125412_InitialCreate")]
     partial class InitialCreate
     {

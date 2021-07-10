@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GeorgesMovies.Models.Models
 {
@@ -14,22 +15,24 @@ namespace GeorgesMovies.Models.Models
             this.Comments = new HashSet<Comment>();
         }
         public int Id { get; set; }
+        [Required]
 
         public string Title { get; set; }
-
+        [Required]
         public int Year { get; set; }
-
-        public int Time { get; set; }
-
+        [Required]
+        public string Time { get; set; }
+        [Required]
         public string Overview { get; set; }
-
-        public string Language { get; set; }
-
-        public DateTime DateRelease { get; set; }
-
+        [Required]
+        public string PictureUrl { get; set; }
+        [Required]
+        public string DateRelease { get; set; }
+        public string MovieUrl { get; set; }
+        [Required]
         public string CountryRelease { get; set; }
-
-        public int Rating { get; set; }
+        [Required]
+        public decimal Rating { get; set; }
 
         public ICollection<User> Users { get; set; }
         public ICollection<Genre> Genres { get; set; }

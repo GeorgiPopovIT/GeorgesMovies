@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GeorgesMovies.Models.Migrations
 {
-    [DbContext(typeof(GeorgesMovieDbContext))]
+    [DbContext(typeof(GeorgesMoviesDbContext))]
     [Migration("20210629112754_RefactorDbMovies")]
     partial class RefactorDbMovies
     {
