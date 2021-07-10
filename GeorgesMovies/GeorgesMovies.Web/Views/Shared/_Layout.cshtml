@@ -25,7 +25,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Add Movie">Add Movie</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="Add">Add Movie</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -41,7 +41,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - GeorgesMovies - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; @DateTime.UtcNow.Year - GeorgesMovies - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -394,7 +394,4 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Debug
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Debug\net5.0\ref\GeorgesMovies.Web.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Debug\net5.0\GeorgesMovies.Web.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Debug\net5.0\GeorgesMovies.Web.genruntimeconfig.cache
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Debug\net5.0\AngleSharp.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Debug\net5.0\GeorgesMovies.Services.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Debug\net5.0\GeorgesMovies.Services.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Debug\net5.0\Razor\Views\Movie\Add.cshtml.g.cs

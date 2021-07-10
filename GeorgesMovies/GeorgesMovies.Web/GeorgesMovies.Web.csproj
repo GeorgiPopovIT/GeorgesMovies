@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GeorgesMovies.Services\GeorgesMovies.Services.csproj" />
+    <ProjectReference Include="..\GeorgesMovies.Models\GeorgesMovies.Models.csproj" />
   </ItemGroup>
 
 </Project>

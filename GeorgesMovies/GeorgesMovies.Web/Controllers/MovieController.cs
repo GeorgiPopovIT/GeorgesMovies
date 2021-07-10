@@ -1,25 +1,83 @@
-﻿using GeorgesMovies.Services.Interfaces;
+﻿using GeorgesMovies.Data;
+using GeorgesMovies.Models.Models;
 using GeorgesMovies.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GeorgesMovies.Web.Controllers
 {
     public class MovieController : Controller
     {
-        private readonly IMovieService service;
-        public MovieController(IMovieService service)
+        private readonly GeorgesMoviesDbContext context;
+        public MovieController(GeorgesMoviesDbContext context)
         {
-            
+            this.context = context;
         }
         public IActionResult Add()
         {
-            return View();
+            return View(new AddMovieFormModel
+            {
+                Genres = GetGenres()
+            });
         }
 
-        //[HttpPost]
-        //public IActionResult Add(AddMovieFormModel movie)
-        //{
-        //    return null;
-        //}
+        [HttpPost]
+        public IActionResult Add(AddMovieFormModel movie)
+        {
+            if (this.context.Movies.Any(m => m.Title == movie.Title))
+            {
+                this.ModelState.AddModelError(string.Empty, "This is movie is already added.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                movie.Genres = GetGenres();
+                return View(movie);
+            }
+            var director = new Director()
+            {
+                FirstName = movie.Director.Split()[0],
+                LastName = movie.Director.Split()[1]
+            };
+            var movieData = new Movie
+            {
+                Title = movie.Title,
+                Time = movie.Time,
+                MovieUrl = movie.MovieUrl,
+                PictureUrl = movie.PictureUrl,
+                GenreId = movie.GenreId,
+                Overview = movie.Overview,
+                Rating = movie.Rating,
+                ReleaseInfo = movie.ReleaseInfo
+            };
+
+            var splittedActors = movie.Actors
+                .Split(new string[] {", ","," },System.StringSplitOptions
+                .RemoveEmptyEntries);
+            foreach (var currActor in splittedActors)
+            {
+                movieData.Actors.Add(new Actor { Name = currActor });
+            } 
+            
+            movieData.Directors.Add(director);
+
+            this.context.Movies.Add(movieData);
+            this.context.SaveChanges();
+
+            return RedirectToAction("Index","Home");
+        }
+        public IEnumerable<GenreFormViewModel> GetGenres()
+        {
+            return this.context
+                .Genres
+                .Select(g => new GenreFormViewModel
+                {
+                    Id = g.Id,
+                    Name = g.Name
+                })
+                .ToList();
+        }
+       
     }
 }

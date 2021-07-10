@@ -1,4 +1,7 @@
+using GeorgesMovies.Data;
 using GeorgesMovies.Web.Data;
+using GeorgesMovies.Web.Services;
+using GeorgesMovies.Web.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -18,11 +21,12 @@ namespace GeorgesMovies.Web
         }
 
         public IConfiguration Configuration { get; }
-
+        
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+
+            services.AddDbContext<GeorgesMoviesDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
@@ -30,13 +34,14 @@ namespace GeorgesMovies.Web
             services
                 .AddDefaultIdentity<IdentityUser>(options =>
                 options.SignIn.RequireConfirmedAccount = false)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<GeorgesMoviesDbContext>();
             services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.PrepareDatabase();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

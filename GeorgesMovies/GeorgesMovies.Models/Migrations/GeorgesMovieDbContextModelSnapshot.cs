@@ -49,21 +49,6 @@ namespace GeorgesMovies.Models.Migrations
                     b.ToTable("DirectorMovie");
                 });
 
-            modelBuilder.Entity("GenreMovie", b =>
-                {
-                    b.Property<int>("GenresId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MoviesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GenresId", "MoviesId");
-
-                    b.HasIndex("MoviesId");
-
-                    b.ToTable("GenreMovie");
-                });
-
             modelBuilder.Entity("GeorgesMovies.Models.Models.Actor", b =>
                 {
                     b.Property<int>("Id")
@@ -71,13 +56,7 @@ namespace GeorgesMovies.Models.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -138,7 +117,7 @@ namespace GeorgesMovies.Models.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Title")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -153,15 +132,11 @@ namespace GeorgesMovies.Models.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CountryRelease")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DateRelease")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
 
                     b.Property<string>("MovieUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Overview")
@@ -175,6 +150,10 @@ namespace GeorgesMovies.Models.Migrations
                     b.Property<decimal>("Rating")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("ReleaseInfo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Time")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -187,6 +166,8 @@ namespace GeorgesMovies.Models.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("GenreId");
 
                     b.ToTable("Movies");
                 });
@@ -257,21 +238,6 @@ namespace GeorgesMovies.Models.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("GenreMovie", b =>
-                {
-                    b.HasOne("GeorgesMovies.Models.Models.Genre", null)
-                        .WithMany()
-                        .HasForeignKey("GenresId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GeorgesMovies.Models.Models.Movie", null)
-                        .WithMany()
-                        .HasForeignKey("MoviesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("GeorgesMovies.Models.Models.Comment", b =>
                 {
                     b.HasOne("GeorgesMovies.Models.Models.Movie", "Movie")
@@ -291,6 +257,17 @@ namespace GeorgesMovies.Models.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("GeorgesMovies.Models.Models.Movie", b =>
+                {
+                    b.HasOne("GeorgesMovies.Models.Models.Genre", "Genre")
+                        .WithMany("Movies")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Genre");
+                });
+
             modelBuilder.Entity("MovieUser", b =>
                 {
                     b.HasOne("GeorgesMovies.Models.Models.Movie", null)
@@ -304,6 +281,11 @@ namespace GeorgesMovies.Models.Migrations
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("GeorgesMovies.Models.Models.Genre", b =>
+                {
+                    b.Navigation("Movies");
                 });
 
             modelBuilder.Entity("GeorgesMovies.Models.Models.Movie", b =>
