@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeorgesMovies.Models", "Geo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeorgesMovies.Web", "GeorgesMovies.Web\GeorgesMovies.Web.csproj", "{5ECCF1AD-ACAB-4CB8-AD0B-2803E42C4813}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeorgesMovies.Services", "GeorgesMovies.Services\GeorgesMovies.Services.csproj", "{DC0662A3-A23E-4B73-8A3E-D8ADDEEE3285}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5ECCF1AD-ACAB-4CB8-AD0B-2803E42C4813}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ECCF1AD-ACAB-4CB8-AD0B-2803E42C4813}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ECCF1AD-ACAB-4CB8-AD0B-2803E42C4813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC0662A3-A23E-4B73-8A3E-D8ADDEEE3285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC0662A3-A23E-4B73-8A3E-D8ADDEEE3285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC0662A3-A23E-4B73-8A3E-D8ADDEEE3285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC0662A3-A23E-4B73-8A3E-D8ADDEEE3285}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

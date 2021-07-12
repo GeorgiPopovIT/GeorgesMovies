@@ -21,7 +21,10 @@ namespace GeorgesMovies.Web.Controllers
                 Genres = GetGenres()
             });
         }
-
+        public IActionResult Manage()
+        {
+            return View();
+        }
         [HttpPost]
         public IActionResult Add(AddMovieFormModel movie)
         {
@@ -49,7 +52,8 @@ namespace GeorgesMovies.Web.Controllers
                 GenreId = movie.GenreId,
                 Overview = movie.Overview,
                 Rating = movie.Rating,
-                ReleaseInfo = movie.ReleaseInfo
+                ReleaseInfo = movie.ReleaseInfo,
+                Review = movie.Review
             };
 
             var splittedActors = movie.Actors
@@ -58,8 +62,8 @@ namespace GeorgesMovies.Web.Controllers
             foreach (var currActor in splittedActors)
             {
                 movieData.Actors.Add(new Actor { Name = currActor });
-            } 
-            
+            }
+            context.Directors.Add(director);
             movieData.Directors.Add(director);
 
             this.context.Movies.Add(movieData);

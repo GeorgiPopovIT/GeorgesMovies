@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GeorgesMovies.Models.Models
 {
@@ -9,6 +10,7 @@ namespace GeorgesMovies.Models.Models
             this.Movies = new HashSet<Movie>();
         }
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
 
         public ICollection<Movie> Movies { get; set; }

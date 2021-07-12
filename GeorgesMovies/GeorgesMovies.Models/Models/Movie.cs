@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using static GeorgesMovies.Models.DataConstants;
 
 namespace GeorgesMovies.Models.Models
 {
@@ -15,7 +16,7 @@ namespace GeorgesMovies.Models.Models
         }
         public int Id { get; set; }
         [Required]
-
+        [MaxLength(MovieTitleMaxLength)]
         public string Title { get; set; }
         [Required]
         public int Year { get; set; }
@@ -26,12 +27,14 @@ namespace GeorgesMovies.Models.Models
         [Required]
         public string PictureUrl { get; set; }
         [Required]
+        public string Review { get; set; }
+        [Required]
         public string MovieUrl { get; set; }
         [Required]
         public string ReleaseInfo { get; set; }
         [Required]
         public decimal Rating { get; set; }
-
+        [Required]
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
 

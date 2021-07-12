@@ -1870,6 +1870,19 @@
         "runtime": {
           "bin/placeholder/GeorgesMovies.Models.dll": {}
         }
+      },
+      "GeorgesMovies.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "GeorgesMovies.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GeorgesMovies.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GeorgesMovies.Services.dll": {}
+        }
       }
     }
   },
@@ -6725,11 +6738,17 @@
       "type": "project",
       "path": "../GeorgesMovies.Models/GeorgesMovies.Models.csproj",
       "msbuildProject": "../GeorgesMovies.Models/GeorgesMovies.Models.csproj"
+    },
+    "GeorgesMovies.Services/1.0.0": {
+      "type": "project",
+      "path": "../GeorgesMovies.Services/GeorgesMovies.Services.csproj",
+      "msbuildProject": "../GeorgesMovies.Services/GeorgesMovies.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "GeorgesMovies.Models >= 1.0.0",
+      "GeorgesMovies.Services >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 5.0.7",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.7",
       "Microsoft.AspNetCore.Identity.UI >= 5.0.7",
@@ -6772,6 +6791,9 @@
           "projectReferences": {
             "C:\\Users\\Georges\\Desktop\\GeorgesMovies\\GeorgesMovies\\GeorgesMovies.Models\\GeorgesMovies.Models.csproj": {
               "projectPath": "C:\\Users\\Georges\\Desktop\\GeorgesMovies\\GeorgesMovies\\GeorgesMovies.Models\\GeorgesMovies.Models.csproj"
+            },
+            "C:\\Users\\Georges\\Desktop\\GeorgesMovies\\GeorgesMovies\\GeorgesMovies.Services\\GeorgesMovies.Services.csproj": {
+              "projectPath": "C:\\Users\\Georges\\Desktop\\GeorgesMovies\\GeorgesMovies\\GeorgesMovies.Services\\GeorgesMovies.Services.csproj"
             }
           }
         }
