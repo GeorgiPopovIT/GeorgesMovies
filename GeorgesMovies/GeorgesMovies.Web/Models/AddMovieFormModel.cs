@@ -7,6 +7,7 @@ namespace GeorgesMovies.Web.Models
     public class AddMovieFormModel
     {
         [Required]
+        [MinLength(3)]
         public string Title { get; set; }
         [Required]
         [Range(1980,
@@ -14,6 +15,7 @@ namespace GeorgesMovies.Web.Models
             ,ErrorMessage ="The movie have to be between years {1} and {2}.")]
         public int Year { get; set; }
         [Required]
+        [MinLength(3)]
         public string Time { get; set; }
         [Required]
         [StringLength(int.MaxValue,
@@ -29,6 +31,7 @@ namespace GeorgesMovies.Web.Models
         [Url]
         public string MovieUrl { get; set; }
         [Required]
+        [MinLength(6)]
         public string ReleaseInfo { get; set; }
         [Required]
         [Range(0,10,
@@ -38,8 +41,10 @@ namespace GeorgesMovies.Web.Models
         [Display(Name = "Genre")]
         public int GenreId { get; set; }
         [Required]
+        [MinLength(8)]
         public string Director { get; set; }
         [Required]
+        [MinLength(8)]
         public string Actors { get; set; }
         [Required]
         [StringLength(int.MaxValue,

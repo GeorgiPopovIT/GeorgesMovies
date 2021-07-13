@@ -23,7 +23,14 @@ namespace GeorgesMovies.Web.Controllers
         }
         public IActionResult Manage()
         {
-            return View();
+            return View(new ManageListingViewModel()
+            {
+                ManageList = this.ManageList()
+            });
+        }
+        public IActionResult ManageT()
+        {
+            return RedirectToAction("Add");
         }
         [HttpPost]
         public IActionResult Add(AddMovieFormModel movie)
@@ -83,5 +90,18 @@ namespace GeorgesMovies.Web.Controllers
                 .ToList();
         }
        
+        public IEnumerable<ManageListingViewModel> ManageList()
+        {
+            var movies = this.context.Movies
+                .Select(m => new ManageListingViewModel
+                {
+                    Title = m.Title,
+                    Genre = m.Genre.Name,
+                    Rating = m.Rating
+                })
+                .ToList();
+
+            return movies;
+        }
     }
 }
