@@ -28,10 +28,7 @@ namespace GeorgesMovies.Web.Controllers
                 ManageList = this.ManageList()
             });
         }
-        public IActionResult ManageT()
-        {
-            return RedirectToAction("Add");
-        }
+       
         [HttpPost]
         public IActionResult Add(AddMovieFormModel movie)
         {
@@ -63,13 +60,7 @@ namespace GeorgesMovies.Web.Controllers
                 Review = movie.Review
             };
 
-            var splittedActors = movie.Actors
-                .Split(new string[] {", ","," },System.StringSplitOptions
-                .RemoveEmptyEntries);
-            foreach (var currActor in splittedActors)
-            {
-                movieData.Actors.Add(new Actor { Name = currActor });
-            }
+            
             context.Directors.Add(director);
             movieData.Directors.Add(director);
 

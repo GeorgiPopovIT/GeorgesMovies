@@ -13,7 +13,10 @@ namespace GeorgesMovies.Models.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(ActorNameMaxLength)]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        [Required]
+        [MaxLength(ActorNameMaxLength)]
+        public string LastName { get; set; }
 
         public ICollection<Movie> Movies { get; set; }
     }
