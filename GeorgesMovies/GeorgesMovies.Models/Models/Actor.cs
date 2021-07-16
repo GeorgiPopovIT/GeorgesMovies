@@ -18,6 +18,8 @@ namespace GeorgesMovies.Models.Models
         [MaxLength(ActorNameMaxLength)]
         public string LastName { get; set; }
 
+        public string Information { get; set; }
+
         public ICollection<Movie> Movies { get; set; }
     }
 }

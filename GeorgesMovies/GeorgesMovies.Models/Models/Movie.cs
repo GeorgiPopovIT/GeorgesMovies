@@ -20,8 +20,7 @@ namespace GeorgesMovies.Models.Models
         public string Title { get; set; }
         [Required]
         public int Year { get; set; }
-        [Required]
-        public DateTime CreatedOn { get; set; }
+       
         [Required]
         public string Time { get; set; }
         [Required]

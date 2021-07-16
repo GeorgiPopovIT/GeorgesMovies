@@ -1,6 +1,7 @@
 ﻿using GeorgesMovies.Data;
 using GeorgesMovies.Models.Models;
 using GeorgesMovies.Web.Models;
+using GeorgesMovies.Web.Models.Movies;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,18 +15,22 @@ namespace GeorgesMovies.Web.Controllers
         {
             this.context = context;
         }
-        public IActionResult Add()
+        public IActionResult All()
         {
-            return View(new AddMovieFormModel
-            {
-                Genres = GetGenres()
-            });
+            return View(GetMoviesPresent());
         }
         public IActionResult Manage()
         {
             return View(new ManageListingViewModel()
             {
                 ManageList = this.ManageList()
+            });
+        }
+        public IActionResult Add()
+        {
+            return View(new AddMovieFormModel
+            {
+                Genres = GetGenres()
             });
         }
        
@@ -51,6 +56,7 @@ namespace GeorgesMovies.Web.Controllers
             {
                 Title = movie.Title,
                 Time = movie.Time,
+                Year = movie.Year,
                 MovieUrl = movie.MovieUrl,
                 PictureUrl = movie.PictureUrl,
                 GenreId = movie.GenreId,
@@ -69,6 +75,7 @@ namespace GeorgesMovies.Web.Controllers
 
             return RedirectToAction("Index","Home");
         }
+
         public IEnumerable<GenreFormViewModel> GetGenres()
         {
             return this.context
@@ -89,6 +96,20 @@ namespace GeorgesMovies.Web.Controllers
                     Title = m.Title,
                     Genre = m.Genre.Name,
                     Rating = m.Rating
+                })
+                .ToList();
+
+            return movies;
+        }
+
+        public IEnumerable<ListMoviesViewModel> GetMoviesPresent()
+        {
+            var movies = this.context.Movies
+                .Select(m => new ListMoviesViewModel
+                {
+                    PictureId = m.PictureUrl,
+                    Title = m.Title,
+                    Overview = m.Overview
                 })
                 .ToList();
 

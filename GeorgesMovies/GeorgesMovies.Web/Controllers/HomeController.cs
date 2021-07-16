@@ -1,4 +1,7 @@
-﻿using GeorgesMovies.Web.Models;
+﻿using GeorgesMovies.Data;
+using GeorgesMovies.Web.Models;
+using GeorgesMovies.Web.Models.Home;
+using GeorgesMovies.Web.Models.Movies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,16 +14,27 @@ namespace GeorgesMovies.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly GeorgesMoviesDbContext context;
+        public HomeController(GeorgesMoviesDbContext context)
         {
-            _logger = logger;
+            this.context = context;
         }
-
         public IActionResult Index()
         {
-            return View();
+            var movies = this.context.Movies
+                 .OrderByDescending(m => m.Id)
+                 .Select(m => new IndexMovieViewModel
+                 {
+                     PictuteUrl = m.PictureUrl,
+                     Title = m.Title
+                 })
+                 .Take(3)
+                 .ToList();
+
+            return View(new IndexViewModel
+            {
+                Movies = movies
+            });
         }
 
         public IActionResult Privacy()

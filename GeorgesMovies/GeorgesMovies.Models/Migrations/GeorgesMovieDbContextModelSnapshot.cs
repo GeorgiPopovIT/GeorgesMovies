@@ -61,6 +61,9 @@ namespace GeorgesMovies.Models.Migrations
                         .HasMaxLength(35)
                         .HasColumnType("nvarchar(35)");
 
+                    b.Property<string>("Information")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(35)
@@ -143,9 +146,6 @@ namespace GeorgesMovies.Models.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("GenreId")
                         .HasColumnType("int");
