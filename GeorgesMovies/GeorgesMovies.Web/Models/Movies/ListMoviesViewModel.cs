@@ -6,5 +6,6 @@
         public string PictureId { get; set; }
         public string Title { get; set; }
         public string Overview { get; set; }
+        public int GenreId { get; set; }
     }
 }

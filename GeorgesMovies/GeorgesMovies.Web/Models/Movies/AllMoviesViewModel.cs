@@ -5,9 +5,12 @@ namespace GeorgesMovies.Web.Models.Movies
 {
     public class AllMoviesViewModel
     {
-        [Display(Name ="Search")]
+        public const int MoviesPerPage = 3;
+
+        [Display(Name = "Search")]
         public string SearchItem { get; set; }
-        public IEnumerable<string> Genres { get; set; }
+        public IEnumerable<GenreFormViewModel> Genres { get; set; }
+        public int GenreId { get; set; }
         public IEnumerable<ListMoviesViewModel> Movies { get; set; }
     }
 }

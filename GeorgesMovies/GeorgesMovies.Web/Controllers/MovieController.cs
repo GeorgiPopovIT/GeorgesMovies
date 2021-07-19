@@ -15,24 +15,30 @@ namespace GeorgesMovies.Web.Controllers
         {
             this.context = context;
         }
-        public IActionResult All(string searchItem)
+        public IActionResult All([FromQuery]AllMoviesViewModel query)
         {
             var moviesQuery = GetMoviesListing();
 
-            if (!string.IsNullOrWhiteSpace(searchItem))
+            if (!string.IsNullOrWhiteSpace(query.SearchItem))
             {
                 moviesQuery = moviesQuery
-                    .Where(m => m.Title.ToLower() == searchItem.ToLower()
-                    || m.Title.ToLower().Contains(searchItem.ToLower()));
+                    .Where(m => m.Title.ToLower() == query.SearchItem.ToLower()
+                    || m.Title.ToLower().Contains(query.SearchItem.ToLower()));
             }
-
+            if (query.GenreId != 0)
+            {
+                moviesQuery = moviesQuery
+                    .Where(g => g.GenreId == query.GenreId);
+            }
+            var genres = GetGenres();
             var movies = moviesQuery.ToList();
 
 
             return View(new AllMoviesViewModel
             {
                 Movies = movies,
-                SearchItem = searchItem
+                SearchItem = query.SearchItem,
+                Genres = genres
             });
         }
         public IActionResult Manage()
@@ -123,6 +129,7 @@ namespace GeorgesMovies.Web.Controllers
                 .Select(m => new ListMoviesViewModel
                 {
                     Id = m.Id,
+                    GenreId = m.GenreId,
                     PictureId = m.PictureUrl,
                     Title = m.Title,
                     Overview = m.Overview

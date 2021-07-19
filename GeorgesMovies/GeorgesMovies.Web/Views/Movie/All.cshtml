@@ -2,27 +2,51 @@
 @{
     ViewData["Title"] = "All Movies";
 }
-<form method="get">
-    <div class="form-group col-md-4">
-        <label asp-for="SearchItem"></label>
-        <input asp-for="SearchItem" class="form-control" placeholder="Name of film..">
-    </div>
-    <input class="float-right" type="button" value="Search" />
-</form>
 
+@if (!Model.Movies.Any())
+{
+    <h1>There is no such movie/movies</h1>
+    <a class="btn btn-secondary  float-left" asp-controller="Movie" asp-action="All">Go Back</a>
+}
+else
+{
+    <form method="get">
+        <div class="row mb-5">
+            <div class="form-group col-md-4">
+                <label asp-for="SearchItem"></label>
+                <input asp-for="SearchItem" class="form-control" placeholder="Name of film..">
+            </div>
 
-<div class="row">
-    @foreach (var movie in Model.Movies)
-    {
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem; margin:10px">
-                <img class="card-img-top" src="@movie.PictureId" alt="@movie.Title ">
-                <div class="card-body">
-                    <h5 class="card-title">@movie.Title</h5>
-                    <p class="card-text">@movie.Overview</p>
-                    <a href="#" class="btn btn-primary">View more</a>
+            <div class="form-group float-right col-md-4">
+                <label asp-for="GenreId"></label>
+                <select asp-for="GenreId" class="form-control">
+                    <option value="">All</option>
+                    @foreach (var genre in Model.Genres)
+                    {
+                        <option value="@genre.Id">@genre.Name</option>
+                    }
+                </select>
+            </div>
+
+            <input type="submit" class="btn btn-info" asp-controller="Movie" asp-action="All" value="Search" />
+        </div>
+    </form>
+
+    <div class="mb-5"></div>
+
+    <div class="row">
+        @foreach (var movie in Model.Movies)
+        {
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem; margin:10px">
+                    <img class="card-img-top" src="@movie.PictureId" alt="@movie.Title ">
+                    <div class="card-body">
+                        <h5 class="card-title">@movie.Title</h5>
+                        <p class="card-text">@movie.Overview</p>
+                        <a href="#" class="btn btn-primary">View more</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>
+}
