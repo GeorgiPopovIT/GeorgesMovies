@@ -18,8 +18,6 @@ namespace GeorgesMovies.Models.Models
         [Required]
         [MaxLength(MovieTitleMaxLength)]
         public string Title { get; set; }
-        [Required]
-        public int Year { get; set; }
        
         [Required]
         public string Time { get; set; }
@@ -32,7 +30,7 @@ namespace GeorgesMovies.Models.Models
         [Required]
         public string MovieUrl { get; set; }
         [Required]
-        public string ReleaseInfo { get; set; }
+        public DateTime ReleaseDate { get; set; }
         [Required]
         public decimal Rating { get; set; }
         [Required]

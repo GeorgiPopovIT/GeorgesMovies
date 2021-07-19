@@ -15,9 +15,25 @@ namespace GeorgesMovies.Web.Controllers
         {
             this.context = context;
         }
-        public IActionResult All()
+        public IActionResult All(string searchItem)
         {
-            return View(GetMoviesPresent());
+            var moviesQuery = GetMoviesListing();
+
+            if (!string.IsNullOrWhiteSpace(searchItem))
+            {
+                moviesQuery = moviesQuery
+                    .Where(m => m.Title.ToLower() == searchItem.ToLower()
+                    || m.Title.ToLower().Contains(searchItem.ToLower()));
+            }
+
+            var movies = moviesQuery.ToList();
+
+
+            return View(new AllMoviesViewModel
+            {
+                Movies = movies,
+                SearchItem = searchItem
+            });
         }
         public IActionResult Manage()
         {
@@ -33,7 +49,7 @@ namespace GeorgesMovies.Web.Controllers
                 Genres = GetGenres()
             });
         }
-       
+
         [HttpPost]
         public IActionResult Add(AddMovieFormModel movie)
         {
@@ -56,24 +72,23 @@ namespace GeorgesMovies.Web.Controllers
             {
                 Title = movie.Title,
                 Time = movie.Time,
-                Year = movie.Year,
                 MovieUrl = movie.MovieUrl,
                 PictureUrl = movie.PictureUrl,
                 GenreId = movie.GenreId,
                 Overview = movie.Overview,
                 Rating = movie.Rating,
-                ReleaseInfo = movie.ReleaseInfo,
+                ReleaseDate = movie.ReleaseDate,
                 Review = movie.Review
             };
 
-            
+
             context.Directors.Add(director);
             movieData.Directors.Add(director);
 
             this.context.Movies.Add(movieData);
             this.context.SaveChanges();
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction(nameof(All));
         }
 
         public IEnumerable<GenreFormViewModel> GetGenres()
@@ -87,7 +102,7 @@ namespace GeorgesMovies.Web.Controllers
                 })
                 .ToList();
         }
-       
+
         public IEnumerable<ManageListingViewModel> ManageList()
         {
             var movies = this.context.Movies
@@ -102,16 +117,17 @@ namespace GeorgesMovies.Web.Controllers
             return movies;
         }
 
-        public IEnumerable<ListMoviesViewModel> GetMoviesPresent()
+        public IQueryable<ListMoviesViewModel> GetMoviesListing()
         {
             var movies = this.context.Movies
                 .Select(m => new ListMoviesViewModel
                 {
+                    Id = m.Id,
                     PictureId = m.PictureUrl,
                     Title = m.Title,
                     Overview = m.Overview
                 })
-                .ToList();
+                .AsQueryable();
 
             return movies;
         }

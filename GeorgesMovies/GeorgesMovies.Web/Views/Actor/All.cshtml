@@ -1,0 +1,14 @@
+﻿@model GeorgesMovies.Web.Models.Actors.AllActorsViewModel
+@{ 
+    ViewData["Title"] = "All actors";
+}
+
+<div class="list-group">
+    <p class="list-group-item list-group-item-action active">
+        Actor name  
+    </p>
+    @foreach (var actor in Model.Actors)
+    {
+        <a href="#" class="list-group-item list-group-item-action">@actor.FirstName @actor.LastName</a>
+    }
+</div>

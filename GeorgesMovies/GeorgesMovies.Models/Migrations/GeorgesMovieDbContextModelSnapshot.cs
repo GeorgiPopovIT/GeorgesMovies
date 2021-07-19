@@ -165,9 +165,8 @@ namespace GeorgesMovies.Models.Migrations
                     b.Property<decimal>("Rating")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("ReleaseInfo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("ReleaseDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Review")
                         .IsRequired()
@@ -181,9 +180,6 @@ namespace GeorgesMovies.Models.Migrations
                         .IsRequired()
                         .HasMaxLength(35)
                         .HasColumnType("nvarchar(35)");
-
-                    b.Property<int>("Year")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
