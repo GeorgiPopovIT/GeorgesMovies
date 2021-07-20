@@ -1,5 +1,6 @@
 ﻿using GeorgesMovies.Data;
 using GeorgesMovies.Models.Models;
+using GeorgesMovies.Services.Movies;
 using GeorgesMovies.Web.Models;
 using GeorgesMovies.Web.Models.Movies;
 using Microsoft.AspNetCore.Mvc;
@@ -11,42 +12,58 @@ namespace GeorgesMovies.Web.Controllers
     public class MovieController : Controller
     {
         private readonly GeorgesMoviesDbContext context;
-        public MovieController(GeorgesMoviesDbContext context)
+        private readonly IMovieService movies;
+        public MovieController(GeorgesMoviesDbContext context, IMovieService movies)
         {
             this.context = context;
+            this.movies = movies;
         }
         public IActionResult All([FromQuery]AllMoviesViewModel query)
         {
-            var moviesQuery = GetMoviesListing();
+            var moviesQuery = this.movies.All(
+                query.SearchItem,
+                query.CurrentPage,
+                AllMoviesViewModel.MoviesPerPage,
+                query.GenreId
+                );
 
-            if (!string.IsNullOrWhiteSpace(query.SearchItem))
-            {
-                moviesQuery = moviesQuery
-                    .Where(m => m.Title.ToLower() == query.SearchItem.ToLower()
-                    || m.Title.ToLower().Contains(query.SearchItem.ToLower()));
-            }
-            if (query.GenreId != 0)
-            {
-                moviesQuery = moviesQuery
-                    .Where(g => g.GenreId == query.GenreId);
-            }
-            var totalMovies = moviesQuery.Count();
+            query.TotalMovies = moviesQuery.TotalMovies;
+            query.Movies = moviesQuery.Movies;
+            query.Genres = moviesQuery.Genres;
 
-            var genres = GetGenres();
-            var movies = moviesQuery
-                .Skip((query.CurrentPage - 1) * AllMoviesViewModel.MoviesPerPage)
-                .Take(AllMoviesViewModel.MoviesPerPage)
-                .ToList();
+            return View(query);
+            //var moviesQuery = GetMoviesListing();
+
+            //if (!string.IsNullOrWhiteSpace(query.SearchItem))
+            //{
+            //    moviesQuery = moviesQuery
+            //        .Where(m => m.Title.ToLower() == query.SearchItem.ToLower()
+            //        || m.Title.ToLower().Contains(query.SearchItem.ToLower()));
+            //}
+            //if (query.GenreId != 0)
+            //{
+            //    moviesQuery = moviesQuery
+            //        .Where(g => g.GenreId == query.GenreId);
+            //}
+
+            //var totalMovies = moviesQuery.Count();
+
+            //var genres = GetGenres();
+            //var movies = moviesQuery
+            //    .Skip((query.CurrentPage - 1) * AllMoviesViewModel.MoviesPerPage)
+            //    .Take(AllMoviesViewModel.MoviesPerPage)
+            //    .ToList();
 
 
-            return View(new AllMoviesViewModel
-            {
-                CurrentPage = query.CurrentPage,
-                TotalMovies = totalMovies,
-                Movies = movies,
-                SearchItem = query.SearchItem,
-                Genres = genres
-            });
+            //return View(new AllMoviesViewModel
+            //{
+            //    GenreId = query.GenreId,
+            //    CurrentPage = query.CurrentPage,
+            //    TotalMovies = totalMovies,
+            //    Movies = movies,
+            //    SearchItem = query.SearchItem,
+            //    Genres = genres
+            //});
         }
         public IActionResult Manage()
         {
@@ -115,7 +132,7 @@ namespace GeorgesMovies.Web.Controllers
                 Review = currMovie.Review,
                 Time = currMovie.Time,
                 Title = currMovie.Title,
-                ReleaseDate = currMovie.ReleaseDate.ToString("MMMM dd, yyyy")
+                Year = currMovie.ReleaseDate.Year
             });
         }
 

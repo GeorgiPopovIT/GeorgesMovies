@@ -1,4 +1,5 @@
 using GeorgesMovies.Data;
+using GeorgesMovies.Services.Movies;
 using GeorgesMovies.Web.Data;
 using GeorgesMovies.Web.Infrastructure;
 using Microsoft.AspNetCore.Builder;
@@ -34,6 +35,8 @@ namespace GeorgesMovies.Web
                 options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<GeorgesMoviesDbContext>();
             services.AddControllersWithViews();
+
+            services.AddTransient<IMovieService, MovieService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

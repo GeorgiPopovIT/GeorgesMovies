@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using GeorgesMovies.Services.Genres;
+using GeorgesMovies.Services.Movies;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GeorgesMovies.Web.Models.Movies
@@ -9,10 +11,10 @@ namespace GeorgesMovies.Web.Models.Movies
 
         [Display(Name = "Search")]
         public string SearchItem { get; set; }
-        public IEnumerable<GenreFormViewModel> Genres { get; set; }
+        public IEnumerable<GenreServiceFormModel> Genres { get; set; }
         public int CurrentPage { get; set; } = 1;
         public int GenreId { get; set; }
-        public IEnumerable<ListMoviesViewModel> Movies { get; set; }
+        public IEnumerable<MovieServiceModel> Movies { get; set; }
         public int TotalMovies { get; set; }
     }
 }
