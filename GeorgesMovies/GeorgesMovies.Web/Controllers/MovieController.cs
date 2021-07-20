@@ -30,12 +30,19 @@ namespace GeorgesMovies.Web.Controllers
                 moviesQuery = moviesQuery
                     .Where(g => g.GenreId == query.GenreId);
             }
+            var totalMovies = moviesQuery.Count();
+
             var genres = GetGenres();
-            var movies = moviesQuery.ToList();
+            var movies = moviesQuery
+                .Skip((query.CurrentPage - 1) * AllMoviesViewModel.MoviesPerPage)
+                .Take(AllMoviesViewModel.MoviesPerPage)
+                .ToList();
 
 
             return View(new AllMoviesViewModel
             {
+                CurrentPage = query.CurrentPage,
+                TotalMovies = totalMovies,
                 Movies = movies,
                 SearchItem = query.SearchItem,
                 Genres = genres
@@ -95,6 +102,21 @@ namespace GeorgesMovies.Web.Controllers
             this.context.SaveChanges();
 
             return RedirectToAction(nameof(All));
+        }
+
+        public IActionResult Details(int id)
+        {
+            var currMovie = this.context.Movies.FirstOrDefault(m => m.Id == id);
+
+            return View(new DetailsMovieViewModel
+            {
+                Id = id,
+                MovieUrl = currMovie.MovieUrl,
+                Review = currMovie.Review,
+                Time = currMovie.Time,
+                Title = currMovie.Title,
+                ReleaseDate = currMovie.ReleaseDate.ToString("MMMM dd, yyyy")
+            });
         }
 
         public IEnumerable<GenreFormViewModel> GetGenres()

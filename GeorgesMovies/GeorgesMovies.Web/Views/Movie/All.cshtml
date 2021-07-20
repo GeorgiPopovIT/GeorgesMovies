@@ -1,52 +1,80 @@
 ﻿@model AllMoviesViewModel
-@{
-    ViewData["Title"] = "All Movies";
-}
+@{ ViewData["Title"] = "All Movies"; }
+
+
 
 @if (!Model.Movies.Any())
 {
-    <h1>There is no such movie/movies</h1>
-    <a class="btn btn-secondary  float-left" asp-controller="Movie" asp-action="All">Go Back</a>
-}
-else
-{
-    <form method="get">
-        <div class="row mb-5">
-            <div class="form-group col-md-4">
-                <label asp-for="SearchItem"></label>
-                <input asp-for="SearchItem" class="form-control" placeholder="Name of film..">
-            </div>
+<h1>There is no such movie/movies</h1>
+                <a class="btn btn-secondary  float-left" asp-controller="Movie" asp-action="All">Go Back</a>}
 
-            <div class="form-group float-right col-md-4">
-                <label asp-for="GenreId"></label>
-                <select asp-for="GenreId" class="form-control">
-                    <option value="">All</option>
-                    @foreach (var genre in Model.Genres)
-                    {
-                        <option value="@genre.Id">@genre.Name</option>
-                    }
-                </select>
-            </div>
 
-            <input type="submit" class="btn btn-info" asp-controller="Movie" asp-action="All" value="Search" />
+<form method="get">
+    <div class="row mb-5">
+        <div class="form-group col-md-4">
+            <label asp-for="SearchItem"></label>
+            <input asp-for="SearchItem" class="form-control" placeholder="Name of film..">
         </div>
-    </form>
 
-    <div class="mb-5"></div>
+        <div class="form-group float-right col-md-4">
+            <label asp-for="GenreId"></label>
+            <select asp-for="GenreId" class="form-control">
+                <option value="">All</option>
+                @foreach (var genre in Model.Genres)
+                {
+    <option value="@genre.Id">@genre.Name</option>}
+            </select>
+        </div>
 
-    <div class="row">
-        @foreach (var movie in Model.Movies)
-        {
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem; margin:10px">
-                    <img class="card-img-top" src="@movie.PictureId" alt="@movie.Title ">
-                    <div class="card-body">
-                        <h5 class="card-title">@movie.Title</h5>
-                        <p class="card-text">@movie.Overview</p>
-                        <a href="#" class="btn btn-primary">View more</a>
-                    </div>
-                </div>
-            </div>
-        }
+        <input type="submit" class="btn btn-info" asp-controller="Movie" asp-action="All" value="Search" />
     </div>
-}
+</form>
+
+<div class="mb-5"></div>
+
+<div class="row">
+    @foreach (var movie in Model.Movies)
+    {
+<div class="col-md-4">
+    <div class="card" style="width: 18rem; margin:10px">
+        <img class="card-img-top" src="@movie.PictureId" alt="@movie.Title ">
+        <div class="card-body">
+            <h5 class="card-title">@movie.Title</h5>
+            <p class="card-text">@movie.Overview</p>
+            <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id" class="btn btn-primary">Go to trailer</a>
+        </div>
+    </div>
+</div>}
+</div>
+
+<div class="mb-5"></div>
+@{ var previousPage = Model.CurrentPage - 1;
+    if (previousPage == 0)
+    {
+        previousPage = 1;
+    }
+    var maxPage = Math.Ceiling((double)Model.TotalMovies / AllMoviesViewModel.MoviesPerPage); 
+    }
+
+<div class="row">
+    <div class="col-md-6">
+        <a class="btn btn-primary @(Model.CurrentPage  == 1 ? "disabled" : string.Empty)"
+           asp-controller="Movie"
+           asp-action="All"
+           asp-route-searchItem="@Model.SearchItem"
+           asp-route-currentPage="@previousPage">
+            Previous
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a class="btn btn-primary float-right @(Model.CurrentPage == maxPage ? "disabled" : string.Empty)"
+           asp-controller="Movie"
+           asp-action="All"
+           asp-route-searchItem="@Model.SearchItem"
+           asp-route-currentPage="@(Model.CurrentPage + 1)">
+            Next
+        </a>
+    </div>
+</div>
+
+
