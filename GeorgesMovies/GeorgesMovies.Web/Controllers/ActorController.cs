@@ -50,7 +50,7 @@ namespace GeorgesMovies.Web.Controllers
 
             this.context.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(MovieController.Manage),nameof(MovieController));
         }
 
         public IActionResult All()

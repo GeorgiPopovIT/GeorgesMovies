@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeorgesMovies.Services.Genres;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using static GeorgesMovies.Web.Models.ModelConstants;
@@ -47,7 +48,7 @@ namespace GeorgesMovies.Web.Models
             MinimumLength =15,
             ErrorMessage ="The review have to be minimum {2} characters length.")]
         public string Review { get; set; }
-        public IEnumerable<GenreFormViewModel> Genres { get; set; }
+        public IEnumerable<GenreServiceFormModel> Genres { get; set; }
         
     }
 }

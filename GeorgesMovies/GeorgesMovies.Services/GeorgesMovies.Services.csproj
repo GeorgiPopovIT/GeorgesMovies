@@ -8,8 +8,4 @@
     <ProjectReference Include="..\GeorgesMovies.Models\GeorgesMovies.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Actors\" />
-  </ItemGroup>
-
 </Project>

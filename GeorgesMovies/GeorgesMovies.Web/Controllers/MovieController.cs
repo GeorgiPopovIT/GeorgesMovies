@@ -2,6 +2,7 @@
 using GeorgesMovies.Models.Models;
 using GeorgesMovies.Services.Movies;
 using GeorgesMovies.Web.Models;
+using GeorgesMovies.Web.Models.Actors;
 using GeorgesMovies.Web.Models.Movies;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace GeorgesMovies.Web.Controllers
             this.context = context;
             this.movies = movies;
         }
-        public IActionResult All([FromQuery]AllMoviesViewModel query)
+        public IActionResult All([FromQuery] AllMoviesViewModel query)
         {
             var moviesQuery = this.movies.All(
                 query.SearchItem,
@@ -32,56 +33,25 @@ namespace GeorgesMovies.Web.Controllers
             query.Genres = moviesQuery.Genres;
 
             return View(query);
-            //var moviesQuery = GetMoviesListing();
 
-            //if (!string.IsNullOrWhiteSpace(query.SearchItem))
-            //{
-            //    moviesQuery = moviesQuery
-            //        .Where(m => m.Title.ToLower() == query.SearchItem.ToLower()
-            //        || m.Title.ToLower().Contains(query.SearchItem.ToLower()));
-            //}
-            //if (query.GenreId != 0)
-            //{
-            //    moviesQuery = moviesQuery
-            //        .Where(g => g.GenreId == query.GenreId);
-            //}
-
-            //var totalMovies = moviesQuery.Count();
-
-            //var genres = GetGenres();
-            //var movies = moviesQuery
-            //    .Skip((query.CurrentPage - 1) * AllMoviesViewModel.MoviesPerPage)
-            //    .Take(AllMoviesViewModel.MoviesPerPage)
-            //    .ToList();
-
-
-            //return View(new AllMoviesViewModel
-            //{
-            //    GenreId = query.GenreId,
-            //    CurrentPage = query.CurrentPage,
-            //    TotalMovies = totalMovies,
-            //    Movies = movies,
-            //    SearchItem = query.SearchItem,
-            //    Genres = genres
-            //});
         }
         public IActionResult Manage()
         {
-            return View(new ManageListingViewModel()
-            {
-                ManageList = this.ManageList()
-            });
+            var manage = this.movies.Manage();
+
+            return View(manage);
+            
         }
         public IActionResult Add()
         {
-            return View(new AddMovieFormModel
+            return View(new AddMovieServiceModel
             {
-                Genres = GetGenres()
+                Genres = this.movies.GetGenres()
             });
         }
 
         [HttpPost]
-        public IActionResult Add(AddMovieFormModel movie)
+        public IActionResult Add(AddMovieServiceModel movie)
         {
             if (this.context.Movies.Any(m => m.Title == movie.Title))
             {
@@ -90,92 +60,44 @@ namespace GeorgesMovies.Web.Controllers
 
             if (!ModelState.IsValid)
             {
-                movie.Genres = GetGenres();
+                movie.Genres = this.movies.GetGenres();
                 return View(movie);
             }
-            var director = new Director()
-            {
-                FirstName = movie.Director.Split()[0],
-                LastName = movie.Director.Split()[1]
-            };
-            var movieData = new Movie
-            {
-                Title = movie.Title,
-                Time = movie.Time,
-                MovieUrl = movie.MovieUrl,
-                PictureUrl = movie.PictureUrl,
-                GenreId = movie.GenreId,
-                Overview = movie.Overview,
-                Rating = movie.Rating,
-                ReleaseDate = movie.ReleaseDate,
-                Review = movie.Review
-            };
 
-
-            context.Directors.Add(director);
-            movieData.Directors.Add(director);
-
-            this.context.Movies.Add(movieData);
-            this.context.SaveChanges();
+            this.movies.Add(movie);
 
             return RedirectToAction(nameof(All));
         }
 
         public IActionResult Details(int id)
         {
-            var currMovie = this.context.Movies.FirstOrDefault(m => m.Id == id);
 
-            return View(new DetailsMovieViewModel
-            {
-                Id = id,
-                MovieUrl = currMovie.MovieUrl,
-                Review = currMovie.Review,
-                Time = currMovie.Time,
-                Title = currMovie.Title,
-                Year = currMovie.ReleaseDate.Year
-            });
-        }
+            var detailQuery = this.movies.Details(id);
 
-        public IEnumerable<GenreFormViewModel> GetGenres()
-        {
-            return this.context
-                .Genres
-                .Select(g => new GenreFormViewModel
-                {
-                    Id = g.Id,
-                    Name = g.Name
-                })
-                .ToList();
-        }
+            return View(detailQuery);
+            //var currMovie = this.context.Movies.FirstOrDefault(m => m.Id == id);
 
-        public IEnumerable<ManageListingViewModel> ManageList()
-        {
-            var movies = this.context.Movies
-                .Select(m => new ManageListingViewModel
-                {
-                    Title = m.Title,
-                    Genre = m.Genre.Name,
-                    Rating = m.Rating
-                })
-                .ToList();
+            //var actors = this.context.Actors.Where(a => a.Movies.Contains(currMovie))
+            //    .Select(a => new ActorsNamesViewModel {FirstName= a.FirstName,LastName = a.LastName })
+            //    .ToList();
 
-            return movies;
-        }
+            //var director = this.context.Directors
+            //    .Where(d => d.Movies.Contains(currMovie))
+            //    .Select(d => new { Name = d.FirstName + " " + d.LastName })
+            //    .FirstOrDefault();
+               
 
-        public IQueryable<ListMoviesViewModel> GetMoviesListing()
-        {
-            var movies = this.context.Movies
-                .Select(m => new ListMoviesViewModel
-                {
-                    Id = m.Id,
-                    GenreId = m.GenreId,
-                    PictureId = m.PictureUrl,
-                    Title = m.Title,
-                    Overview = m.Overview
-                })
-                .AsQueryable();
-
-            return movies;
+            //return View(new DetailsMovieViewModel
+            //{
+            //    Id = id,
+            //    MovieUrl = currMovie.MovieUrl,
+            //    Review = currMovie.Review,
+            //    Time = currMovie.Time,
+            //    Title = currMovie.Title,
+            //    Year = currMovie.ReleaseDate.Year,
+            //    ActorNames = actors,
+            //    DirectorName = director.Name
+            //});
         }
     }
 }
