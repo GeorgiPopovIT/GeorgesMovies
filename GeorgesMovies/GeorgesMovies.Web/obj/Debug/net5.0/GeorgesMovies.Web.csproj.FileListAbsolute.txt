@@ -402,3 +402,4 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Debug
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Debug\net5.0\Razor\Views\Movie\All.cshtml.g.cs
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Debug\net5.0\Razor\Views\Actor\All.cshtml.g.cs
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Debug\net5.0\Razor\Views\Movie\Details.cshtml.g.cs
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Debug\net5.0\Razor\Views\Actor\Info.cshtml.g.cs

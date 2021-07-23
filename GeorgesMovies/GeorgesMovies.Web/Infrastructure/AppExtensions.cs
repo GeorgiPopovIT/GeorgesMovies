@@ -1,5 +1,5 @@
 ﻿using GeorgesMovies.Data;
-using GeorgesMovies.Services;
+using GeorgesMovies.Services.Genres;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 

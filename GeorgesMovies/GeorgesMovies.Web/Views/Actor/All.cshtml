@@ -1,14 +1,19 @@
 ﻿@model GeorgesMovies.Web.Models.Actors.AllActorsViewModel
-@{ 
-    ViewData["Title"] = "All actors";
-}
+@{ ViewData["Title"] = "All actors"; }
 
-<div class="list-group">
-    <p class="list-group-item list-group-item-action active">
-        Actor name  
-    </p>
-    @foreach (var actor in Model.Actors)
+<div class="list-group col-md-4">
+    <a style="color:white" 
+       class="list-group-item list-group-item-action active disabled">
+        List of actors:
+    </a>
+    @for (int i = 0; i < Model.Actors.Count; i++)
     {
-        <a href="#" class="list-group-item list-group-item-action">@actor.FirstName @actor.LastName</a>
+        <a asp-controller="Actor"
+           asp-action="Info"
+           asp-route-id="@Model.Actors[i].Id" 
+           class="list-group-item list-group-item-action">
+            @(i + 1).  @Model.Actors[i].FirstName @Model.Actors[i].LastName
+    </a>
     }
+
 </div>

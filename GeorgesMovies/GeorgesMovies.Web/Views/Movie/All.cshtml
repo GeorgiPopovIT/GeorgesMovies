@@ -48,13 +48,13 @@
 </div>
 
 <div class="mb-5"></div>
+
 @{ var previousPage = Model.CurrentPage - 1;
     if (previousPage == 0)
     {
         previousPage = 1;
     }
-    var maxPage = Math.Ceiling((double)Model.TotalMovies / AllMoviesViewModel.MoviesPerPage); 
-    }
+    var maxPage = Math.Ceiling((double)Model.TotalMovies / AllMoviesViewModel.MoviesPerPage); }
 
 <div class="row">
     <div class="col-md-6">

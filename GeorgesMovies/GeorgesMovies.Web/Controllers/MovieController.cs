@@ -71,33 +71,17 @@ namespace GeorgesMovies.Web.Controllers
 
         public IActionResult Details(int id)
         {
-
             var detailQuery = this.movies.Details(id);
 
             return View(detailQuery);
-            //var currMovie = this.context.Movies.FirstOrDefault(m => m.Id == id);
+        }
 
-            //var actors = this.context.Actors.Where(a => a.Movies.Contains(currMovie))
-            //    .Select(a => new ActorsNamesViewModel {FirstName= a.FirstName,LastName = a.LastName })
-            //    .ToList();
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            this.movies.Delete(id);
 
-            //var director = this.context.Directors
-            //    .Where(d => d.Movies.Contains(currMovie))
-            //    .Select(d => new { Name = d.FirstName + " " + d.LastName })
-            //    .FirstOrDefault();
-               
-
-            //return View(new DetailsMovieViewModel
-            //{
-            //    Id = id,
-            //    MovieUrl = currMovie.MovieUrl,
-            //    Review = currMovie.Review,
-            //    Time = currMovie.Time,
-            //    Title = currMovie.Title,
-            //    Year = currMovie.ReleaseDate.Year,
-            //    ActorNames = actors,
-            //    DirectorName = director.Name
-            //});
+            return RedirectToAction(nameof(Manage));
         }
     }
 }

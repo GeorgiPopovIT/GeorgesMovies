@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using GeorgesMovies.Services.Actors;
 
 namespace GeorgesMovies.Web.Models.Actors
 {
     public class AllActorsViewModel
     {
-        public IEnumerable<ActorsNamesViewModel> Actors { get; set; }
+        public List<ActorFullNameServiceModel> Actors { get; set; }
     }
 }

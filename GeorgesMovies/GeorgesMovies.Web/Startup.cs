@@ -1,10 +1,12 @@
 using GeorgesMovies.Data;
+using GeorgesMovies.Models;
+using GeorgesMovies.Services.Actors;
 using GeorgesMovies.Services.Movies;
-using GeorgesMovies.Web.Data;
 using GeorgesMovies.Web.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,7 +23,7 @@ namespace GeorgesMovies.Web
         }
 
         public IConfiguration Configuration { get; }
-        
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -36,13 +38,20 @@ namespace GeorgesMovies.Web
                 .AddEntityFrameworkStores<GeorgesMoviesDbContext>();
             services.AddControllersWithViews();
 
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            });
+
             services.AddTransient<IMovieService, MovieService>();
+            services.AddTransient<IActorService, ActorServcie>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.PrepareDatabase();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -67,6 +76,9 @@ namespace GeorgesMovies.Web
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute(
+                //    name: "delete",
+                //    pattern: "{controller=Movie}/{action=Delete}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
