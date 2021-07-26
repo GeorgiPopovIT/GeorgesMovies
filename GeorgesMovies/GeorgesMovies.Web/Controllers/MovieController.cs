@@ -40,22 +40,22 @@ namespace GeorgesMovies.Web.Controllers
             var manage = this.movies.Manage();
 
             return View(manage);
-            
+
         }
         public IActionResult Add()
         {
-            return View(new AddMovieServiceModel
+            return View(new MovieServiceFormModel
             {
                 Genres = this.movies.GetGenres()
             });
         }
 
         [HttpPost]
-        public IActionResult Add(AddMovieServiceModel movie)
+        public IActionResult Add(MovieServiceFormModel movie)
         {
-            if (this.context.Movies.Any(m => m.Title == movie.Title))
+            if (this.movies.IsMovieExist(movie))
             {
-                this.ModelState.AddModelError(string.Empty, "This is movie is already added.");
+                this.ModelState.AddModelError(nameof(movie.Title),"This movie is already added.");
             }
 
             if (!ModelState.IsValid)
@@ -76,7 +76,27 @@ namespace GeorgesMovies.Web.Controllers
             return View(detailQuery);
         }
 
+        public IActionResult Edit(int id)
+        {
+            var currMovie = this.movies.GetMovieById(id);
+            currMovie.Genres = this.movies.GetGenres();
+
+            return View(currMovie);
+        }
         [HttpPost]
+        public IActionResult Edit(int id, MovieServiceFormModel movie)
+        {
+            var editMovie = this.movies.Edit(id, movie);
+            if (!editMovie || !ModelState.IsValid)
+            {
+                IActionResult actionResult = Edit(id);
+                return base.RedirectToAction(nameof(actionResult));
+            }
+            return RedirectToAction(nameof(Manage));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
             this.movies.Delete(id);

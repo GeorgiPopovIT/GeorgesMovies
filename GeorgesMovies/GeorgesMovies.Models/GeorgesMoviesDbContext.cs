@@ -1,15 +1,17 @@
 ﻿using GeorgesMovies.Models.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace GeorgesMovies.Data
 {
-    public class GeorgesMoviesDbContext : DbContext
+    public class GeorgesMoviesDbContext : IdentityDbContext<User>
     {
         public GeorgesMoviesDbContext()
         {
 
         }
-        public GeorgesMoviesDbContext(DbContextOptions options)
+        public GeorgesMoviesDbContext(DbContextOptions<GeorgesMoviesDbContext> options)
             : base(options)
         {
 
@@ -18,7 +20,6 @@ namespace GeorgesMovies.Data
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Director> Directors { get; set; }
-        public DbSet<User> Users { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -29,6 +30,18 @@ namespace GeorgesMovies.Data
             }
             base.OnConfiguring(optionsBuilder);
         }
-        
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Movie>()
+                .HasMany(a => a.Actors)
+                .WithMany(m => m.Movies)
+                .UsingEntity<Dictionary<string, object>>(
+                "MoviesActors",
+                f => f.HasOne<Actor>().WithMany().OnDelete(DeleteBehavior.Restrict),
+                 f => f.HasOne<Movie>().WithMany().OnDelete(DeleteBehavior.Restrict)
+                );
+
+            base.OnModelCreating(builder);
+        }
     }
 }

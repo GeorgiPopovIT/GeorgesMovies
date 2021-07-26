@@ -1,5 +1,6 @@
 using GeorgesMovies.Data;
 using GeorgesMovies.Models;
+using GeorgesMovies.Models.Models;
 using GeorgesMovies.Services.Actors;
 using GeorgesMovies.Services.Movies;
 using GeorgesMovies.Web.Infrastructure;
@@ -30,11 +31,18 @@ namespace GeorgesMovies.Web
             services.AddDbContext<GeorgesMoviesDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services
-                .AddDefaultIdentity<IdentityUser>(options =>
-                options.SignIn.RequireConfirmedAccount = false)
+                .AddDefaultIdentity<User>(options =>
+                {
+                    options.Password.RequireDigit = false;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                    //options.SignIn.RequireConfirmedAccount = false;
+                })
                 .AddEntityFrameworkStores<GeorgesMoviesDbContext>();
             services.AddControllersWithViews();
 

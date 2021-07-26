@@ -1,21 +1,21 @@
-﻿
+﻿using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+using static GeorgesMovies.Models.DataConstants;
 
 namespace GeorgesMovies.Models.Models
 {
-    public class User
+    public class User : IdentityUser
     {
         public User()
         {
-            this.Movies = new HashSet<Movie>();
             this.Comments = new HashSet<Comment>();
         }
-        public int Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
+        [Required]
+        [MaxLength(FullNameMaxLength)]
+        public string FullName { get; set; }
 
-        public ICollection<Movie> Movies { get; set; }
         public ICollection<Comment> Comments { get; set; }
     }
 }

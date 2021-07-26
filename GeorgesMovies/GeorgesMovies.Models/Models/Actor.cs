@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+
 using static GeorgesMovies.Models.DataConstants;
 
 namespace GeorgesMovies.Models.Models
@@ -10,10 +11,13 @@ namespace GeorgesMovies.Models.Models
         {
             this.Movies = new HashSet<Movie>();
         }
+        [Key]
         public int Id { get; set; }
+
         [Required]
         [MaxLength(ActorNameMaxLength)]
         public string FirstName { get; set; }
+
         [Required]
         [MaxLength(ActorNameMaxLength)]
         public string LastName { get; set; }

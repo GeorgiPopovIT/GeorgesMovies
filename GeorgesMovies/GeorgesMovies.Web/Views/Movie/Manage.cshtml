@@ -29,8 +29,8 @@
                 <td>@movie.Genre</td>
                 <td>@movie.Rating</td>
                 <td>
-                    <button class="btn btn-primary">Edit</button>
-                    <a class="btn btn-danger" asp-controller="Movie" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+                    <a class="btn btn-warning" asp-controller="Movie" asp-action="Edit" asp-route-id="@movie.Id">Edit</a>
+                    <a class="btn btn-danger" asp-controller="Movie" asp-action="Delete" asp-route-id="@movie.Id">Delete</a>
                 </td>
             </tr>
         }
