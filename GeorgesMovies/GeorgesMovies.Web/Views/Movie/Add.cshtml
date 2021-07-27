@@ -1,6 +1,8 @@
 ﻿@model MovieServiceFormModel
-@{
-    ViewData["Title"] = "Add Movie";
-}
+@{ ViewData["Title"] = "Add Movie"; }
 
-<partial name="_MovieFormPartial" model="@Model"/>
+<partial name="_MovieFormPartial" model="@Model" />\
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

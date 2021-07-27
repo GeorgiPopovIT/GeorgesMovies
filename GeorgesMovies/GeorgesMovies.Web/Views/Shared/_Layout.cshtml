@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+@using GeorgesMovies.Models.Models;
+@inject UserManager<User> UserManager
+
+
+@{ 
+    var usersCount = this.UserManager.Users.Count();
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -21,13 +29,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        @*<li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="Manage">Manage</a>
-                        </li>
-
+                        @*@if (this.User.IsInRole(WebConstants.AdminRoleName))
+                        {*@
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="Manage">Manage</a>
+            </li>@*}*@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Actor" asp-action="All">All actors</a>
                         </li>
@@ -48,8 +54,14 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; @DateTime.UtcNow.Year - GeorgesMovies - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="float-left">
+                &copy; @DateTime.UtcNow.Year - GeorgesMovies
+            </div>
+            <div class="float-right">
+                Total Users: @usersCount
+            </div>
         </div>
+        
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

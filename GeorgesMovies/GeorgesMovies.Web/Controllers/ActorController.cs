@@ -1,11 +1,10 @@
 ﻿using System;
-using GeorgesMovies.Data;
-using GeorgesMovies.Models.Models;
+using System.Linq;
 using GeorgesMovies.Services.Actors;
 using GeorgesMovies.Web.Models.Actors;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
+
 
 namespace GeorgesMovies.Web.Controllers
 {
@@ -17,6 +16,7 @@ namespace GeorgesMovies.Web.Controllers
             this.actors = actors;
         }
 
+        [Authorize]
         public IActionResult Add()
         {
             return View(new AddActorServiceModel
@@ -24,6 +24,7 @@ namespace GeorgesMovies.Web.Controllers
                 Movies = this.actors.GetMoviesTitles()
             });
         }
+        [Authorize]
         [HttpPost]
         public IActionResult Add(AddActorServiceModel actorToAdd)
         {
@@ -46,7 +47,7 @@ namespace GeorgesMovies.Web.Controllers
 
             return RedirectToAction("Manage", "Movie");
         }
-
+        [Authorize]
         public IActionResult All()
         {
             var actors = new AllActorsViewModel
@@ -56,7 +57,7 @@ namespace GeorgesMovies.Web.Controllers
 
             return View(actors);
         }
-
+        [Authorize]
         public IActionResult Info(int id)
         {
             var infoForActor = this.actors.GetInfoAboutActor(id);

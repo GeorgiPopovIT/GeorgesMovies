@@ -34,6 +34,7 @@ namespace GeorgesMovies.Web
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
+
             services
                 .AddDefaultIdentity<User>(options =>
                 {
@@ -43,6 +44,7 @@ namespace GeorgesMovies.Web
                     options.Password.RequireUppercase = false;
                     //options.SignIn.RequireConfirmedAccount = false;
                 })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<GeorgesMoviesDbContext>();
             services.AddControllersWithViews();
 

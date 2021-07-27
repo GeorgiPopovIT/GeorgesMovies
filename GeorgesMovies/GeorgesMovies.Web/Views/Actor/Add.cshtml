@@ -1,7 +1,5 @@
 ﻿@model GeorgesMovies.Services.Actors.AddActorServiceModel
-@{
-    ViewData["Title"] = "Add actor";
-}
+@{ ViewData["Title"] = "Add actor"; }
 <h2 class="text-center">Add actor to film</h2>
 
 <div class="row">
@@ -27,12 +25,15 @@
                 <select asp-for="MovieId" class="form-control">
                     @foreach (var movie in Model.Movies)
                     {
-                        <option value="@movie.Id">@movie.Title</option>
-                    }
+        <option value="@movie.Id">@movie.Title</option>}
                 </select>
             </div>
             <a class="btn btn-secondary float-left" asp-controller="Movie" asp-action="Manage">Go Back</a>
             <button type="submit" class="btn btn-primary float-right">Add</button>
         </form>
     </div>
-</div> 
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

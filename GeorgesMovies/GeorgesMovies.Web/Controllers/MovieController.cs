@@ -1,12 +1,8 @@
 ﻿using GeorgesMovies.Data;
-using GeorgesMovies.Models.Models;
 using GeorgesMovies.Services.Movies;
-using GeorgesMovies.Web.Models;
-using GeorgesMovies.Web.Models.Actors;
 using GeorgesMovies.Web.Models.Movies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace GeorgesMovies.Web.Controllers
 {
@@ -19,6 +15,7 @@ namespace GeorgesMovies.Web.Controllers
             this.context = context;
             this.movies = movies;
         }
+
         public IActionResult All([FromQuery] AllMoviesViewModel query)
         {
             var moviesQuery = this.movies.All(
@@ -35,6 +32,8 @@ namespace GeorgesMovies.Web.Controllers
             return View(query);
 
         }
+
+        [Authorize]
         public IActionResult Manage()
         {
             var manage = this.movies.Manage();
@@ -42,6 +41,8 @@ namespace GeorgesMovies.Web.Controllers
             return View(manage);
 
         }
+
+        [Authorize]
         public IActionResult Add()
         {
             return View(new MovieServiceFormModel
@@ -50,6 +51,7 @@ namespace GeorgesMovies.Web.Controllers
             });
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Add(MovieServiceFormModel movie)
         {
@@ -69,6 +71,7 @@ namespace GeorgesMovies.Web.Controllers
             return RedirectToAction(nameof(All));
         }
 
+        [Authorize]
         public IActionResult Details(int id)
         {
             var detailQuery = this.movies.Details(id);
@@ -76,6 +79,7 @@ namespace GeorgesMovies.Web.Controllers
             return View(detailQuery);
         }
 
+        [Authorize]
         public IActionResult Edit(int id)
         {
             var currMovie = this.movies.GetMovieById(id);
@@ -83,6 +87,8 @@ namespace GeorgesMovies.Web.Controllers
 
             return View(currMovie);
         }
+
+        [Authorize]
         [HttpPost]
         public IActionResult Edit(int id, MovieServiceFormModel movie)
         {
@@ -95,6 +101,7 @@ namespace GeorgesMovies.Web.Controllers
             return RedirectToAction(nameof(Manage));
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
