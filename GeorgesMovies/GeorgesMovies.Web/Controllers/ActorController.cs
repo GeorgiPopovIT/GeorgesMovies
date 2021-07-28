@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using GeorgesMovies.Services.Actors;
+using GeorgesMovies.Services.Actors.DTO;
 using GeorgesMovies.Web.Models.Actors;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -34,7 +35,7 @@ namespace GeorgesMovies.Web.Controllers
             }
             catch (Exception e)
             {
-                this.ModelState.AddModelError(nameof(actorToAdd.FirstName), e.Message);
+                return BadRequest();
             }
 
             if (!ModelState.IsValid)

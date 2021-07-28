@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using GeorgesMovies.Services.Actors;
+using GeorgesMovies.Services.Actors.DTO;
 
 namespace GeorgesMovies.Web.Models.Actors
 {

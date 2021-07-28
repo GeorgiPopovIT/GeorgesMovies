@@ -13,8 +13,12 @@ namespace GeorgesMovies.Models.Models
             this.Comments = new HashSet<Comment>();
         }
         [Required]
-        [MaxLength(FullNameMaxLength)]
-        public string FullName { get; set; }
+        [MaxLength(NameMaxLength)]
+        public string FirstName { get; set; }
+        [Required]
+        [MaxLength(NameMaxLength)]
+        public string LastName { get; set; }
+
 
         public ICollection<Comment> Comments { get; set; }
     }

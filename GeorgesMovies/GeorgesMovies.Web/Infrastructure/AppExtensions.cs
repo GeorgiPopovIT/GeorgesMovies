@@ -30,22 +30,22 @@ namespace GeorgesMovies.Web.Infrastructure
 
             AddDefaultGenres.SeedGenres(data);
 
-            SeedAdministrator(data, servicedProvider);
+            SeedAdministrator(servicedProvider);
 
             return app;
         }
 
-        private static void SeedAdministrator(GeorgesMoviesDbContext context, IServiceProvider services)
+        private static void SeedAdministrator(IServiceProvider services)
         {
             var userManager = services.GetRequiredService<UserManager<User>>();
             var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
             Task.Run(async () =>
             {
-                if (await roleManager.RoleExistsAsync(AdminRoleName))
-                {
-                    return;
-                }
+                //if (await roleManager.RoleExistsAsync(AdminRoleName))
+                //{
+                //    return;
+                //}
                 var role = new IdentityRole { Name = AdminRoleName };
 
                 await roleManager.CreateAsync(role);
@@ -54,7 +54,8 @@ namespace GeorgesMovies.Web.Infrastructure
                 {
                     Email = adminEmail,
                     UserName = adminUsername,
-                    FullName = "    "
+                    FirstName = "Admin",
+                    LastName = "LastAdmin"
                 };
 
                 await userManager.CreateAsync(user,adminPassword);

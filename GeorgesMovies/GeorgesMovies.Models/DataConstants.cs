@@ -16,6 +16,6 @@ namespace GeorgesMovies.Models
         public const int DirectorFistNameMaxLength = 15;
         public const int DirectorLastNameMaxLength = 18;
 
-        public const int FullNameMaxLength = 30;
+        public const int NameMaxLength = 20;
     }
 }

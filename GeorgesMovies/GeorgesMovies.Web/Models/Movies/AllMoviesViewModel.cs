@@ -1,5 +1,5 @@
-﻿using GeorgesMovies.Services.Genres;
-using GeorgesMovies.Services.Movies;
+﻿using GeorgesMovies.Services.Genres.DTO;
+using GeorgesMovies.Services.Movies.DTO;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 

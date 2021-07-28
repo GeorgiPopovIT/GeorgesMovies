@@ -35,7 +35,7 @@ using GeorgesMovies.Web.Models.Movies;
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\Views\_ViewImports.cshtml"
-using GeorgesMovies.Services.Movies;
+using GeorgesMovies.Services.Movies.DTO;
 
 #line default
 #line hidden
@@ -55,7 +55,7 @@ using GeorgesMovies.Services.Comments;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0f6a9c553d4c850edc80278cbed64a62e96c1939", @"/Views/Actor/All.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c525b48ed1dd76ddcfe012e41d197105151836e9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f161d675c5accafe9eb49614199d15ab44d9256c", @"/Views/_ViewImports.cshtml")]
     public class Views_Actor_All : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<GeorgesMovies.Web.Models.Actors.AllActorsViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Actor", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -102,7 +102,7 @@ using GeorgesMovies.Services.Comments;
 #line hidden
 #nullable disable
             WriteLiteral("        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f6a9c553d4c850edc80278cbed64a62e96c19395670", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f6a9c553d4c850edc80278cbed64a62e96c19395674", async() => {
                 WriteLiteral("\n            ");
 #nullable restore
 #line 15 "C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\Views\Actor\All.cshtml"

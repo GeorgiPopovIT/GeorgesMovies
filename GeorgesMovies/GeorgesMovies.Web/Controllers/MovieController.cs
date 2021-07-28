@@ -1,5 +1,7 @@
 ﻿using GeorgesMovies.Data;
+using GeorgesMovies.Services.Genres;
 using GeorgesMovies.Services.Movies;
+using GeorgesMovies.Services.Movies.DTO;
 using GeorgesMovies.Web.Models.Movies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -8,12 +10,15 @@ namespace GeorgesMovies.Web.Controllers
 {
     public class MovieController : Controller
     {
+        private readonly IGenreService genres;
         private readonly GeorgesMoviesDbContext context;
         private readonly IMovieService movies;
-        public MovieController(GeorgesMoviesDbContext context, IMovieService movies)
+        public MovieController(GeorgesMoviesDbContext context,
+            IMovieService movies, IGenreService genres)
         {
             this.context = context;
             this.movies = movies;
+            this.genres = genres;
         }
 
         public IActionResult All([FromQuery] AllMoviesViewModel query)
@@ -47,7 +52,7 @@ namespace GeorgesMovies.Web.Controllers
         {
             return View(new MovieServiceFormModel
             {
-                Genres = this.movies.GetGenres()
+                Genres = this.genres.GetGenres()
             });
         }
 
@@ -62,7 +67,7 @@ namespace GeorgesMovies.Web.Controllers
 
             if (!ModelState.IsValid)
             {
-                movie.Genres = this.movies.GetGenres();
+                movie.Genres = this.genres.GetGenres();
                 return View(movie);
             }
 
@@ -83,7 +88,7 @@ namespace GeorgesMovies.Web.Controllers
         public IActionResult Edit(int id)
         {
             var currMovie = this.movies.GetMovieById(id);
-            currMovie.Genres = this.movies.GetGenres();
+            currMovie.Genres = this.genres.GetGenres();
 
             return View(currMovie);
         }
@@ -102,7 +107,7 @@ namespace GeorgesMovies.Web.Controllers
         }
 
         [Authorize]
-        [HttpPost]
+        [HttpDelete]
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {

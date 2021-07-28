@@ -2,6 +2,8 @@ using GeorgesMovies.Data;
 using GeorgesMovies.Models;
 using GeorgesMovies.Models.Models;
 using GeorgesMovies.Services.Actors;
+using GeorgesMovies.Services.Directors;
+using GeorgesMovies.Services.Genres;
 using GeorgesMovies.Services.Movies;
 using GeorgesMovies.Web.Infrastructure;
 using Microsoft.AspNetCore.Builder;
@@ -48,6 +50,15 @@ namespace GeorgesMovies.Web
                 .AddEntityFrameworkStores<GeorgesMoviesDbContext>();
             services.AddControllersWithViews();
 
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
+
+
             services.AddMvc(options =>
             {
                 options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
@@ -55,6 +66,8 @@ namespace GeorgesMovies.Web
 
             services.AddTransient<IMovieService, MovieService>();
             services.AddTransient<IActorService, ActorServcie>();
+            services.AddTransient<IDirectorService, DirectorService>();
+            services.AddTransient<IGenreService, GenreService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,12 +96,10 @@ namespace GeorgesMovies.Web
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
                 //endpoints.MapControllerRoute(
-                //    name: "delete",
-                //    pattern: "{controller=Movie}/{action=Delete}/{id?}");
+                //    name: "default",
+                //    pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
