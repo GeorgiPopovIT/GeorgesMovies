@@ -42,20 +42,13 @@ using GeorgesMovies.Services.Movies.DTO;
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\Views\_ViewImports.cshtml"
-using GeorgesMovies.Web.Models.Comments;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 6 "C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\Views\_ViewImports.cshtml"
 using GeorgesMovies.Services.Comments;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fa23f44a768e0f75c64c76d59ae9e232e91b9bc3", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f161d675c5accafe9eb49614199d15ab44d9256c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c734020ec190b69df4ec0eb9f0e628d97958471e", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<GeorgesMovies.Web.Models.Home.IndexViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Movie", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -95,7 +88,7 @@ using GeorgesMovies.Services.Comments;
 #line hidden
 #nullable disable
             WriteLiteral("<div class=\"jumbotron\">\n    <h1 class=\"display-4\">Hello to GeorgesMovies!</h1>\n    <p class=\"lead\">This is my first ASP-NET Core project.</p>\n    <hr class=\"my-4\">\n    <p>It\'s about presentation of movies.</p>\n    <p class=\"lead\">\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa23f44a768e0f75c64c76d59ae9e232e91b9bc35492", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa23f44a768e0f75c64c76d59ae9e232e91b9bc35273", async() => {
                 WriteLiteral("View All Movies");
             }
             );

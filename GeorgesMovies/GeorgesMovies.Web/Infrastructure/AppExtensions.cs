@@ -14,9 +14,9 @@ namespace GeorgesMovies.Web.Infrastructure
 
     public static class AppExtensions
     {
-        private const string adminEmail = "admin1@mail.com";
-        private const string adminPassword = "gogo1912";
-        private const string adminUsername = "gogo";
+        private const string adminEmail = "gogopopo@gmail.com";
+        private const string adminPassword = "samobotev";
+        private const string adminUsername = "gorges";
 
         public static IApplicationBuilder PrepareDatabase(
             this IApplicationBuilder app)
@@ -54,8 +54,8 @@ namespace GeorgesMovies.Web.Infrastructure
                 {
                     Email = adminEmail,
                     UserName = adminUsername,
-                    FirstName = "Admin",
-                    LastName = "LastAdmin"
+                    FirstName = "Gorges",
+                    LastName = "Adminov"
                 };
 
                 await userManager.CreateAsync(user,adminPassword);

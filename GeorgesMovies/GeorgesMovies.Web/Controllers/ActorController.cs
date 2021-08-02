@@ -29,15 +29,12 @@ namespace GeorgesMovies.Web.Controllers
         [HttpPost]
         public IActionResult Add(AddActorServiceModel actorToAdd)
         {
-            try
-            {
-                this.actors.Add(actorToAdd);
-            }
-            catch (Exception e)
-            {
-                return BadRequest();
-            }
+            var isActorInData = this.actors.ExistActorInMovie(actorToAdd);
 
+            if (!isActorInData)
+            {
+                this.ModelState.AddModelError(nameof(actorToAdd.FirstName), "This actor is already in movie");
+            }
             if (!ModelState.IsValid)
             {
                 return View(new AddActorServiceModel
@@ -45,6 +42,7 @@ namespace GeorgesMovies.Web.Controllers
                     Movies = this.actors.GetMoviesTitles()
                 });
             }
+            this.actors.Add(actorToAdd);
 
             return RedirectToAction("Manage", "Movie");
         }

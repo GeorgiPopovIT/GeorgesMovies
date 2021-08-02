@@ -2,6 +2,7 @@ using GeorgesMovies.Data;
 using GeorgesMovies.Models;
 using GeorgesMovies.Models.Models;
 using GeorgesMovies.Services.Actors;
+using GeorgesMovies.Services.Comments;
 using GeorgesMovies.Services.Directors;
 using GeorgesMovies.Services.Genres;
 using GeorgesMovies.Services.Movies;
@@ -58,6 +59,7 @@ namespace GeorgesMovies.Web
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
             });
 
+            
 
             services.AddMvc(options =>
             {
@@ -68,6 +70,9 @@ namespace GeorgesMovies.Web
             services.AddTransient<IActorService, ActorServcie>();
             services.AddTransient<IDirectorService, DirectorService>();
             services.AddTransient<IGenreService, GenreService>();
+            services.AddTransient<ICommentService, CommentService>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

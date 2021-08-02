@@ -1,4 +1,5 @@
 ﻿using GeorgesMovies.Data;
+using GeorgesMovies.Services.Comments;
 using GeorgesMovies.Services.Genres;
 using GeorgesMovies.Services.Movies;
 using GeorgesMovies.Services.Movies.DTO;
@@ -62,7 +63,7 @@ namespace GeorgesMovies.Web.Controllers
         {
             if (this.movies.IsMovieExist(movie))
             {
-                this.ModelState.AddModelError(nameof(movie.Title),"This movie is already added.");
+                this.ModelState.AddModelError(nameof(movie.Title), "This movie is already added.");
             }
 
             if (!ModelState.IsValid)
@@ -80,7 +81,6 @@ namespace GeorgesMovies.Web.Controllers
         public IActionResult Details(int id)
         {
             var detailQuery = this.movies.Details(id);
-
             return View(detailQuery);
         }
 
@@ -100,14 +100,13 @@ namespace GeorgesMovies.Web.Controllers
             var editMovie = this.movies.Edit(id, movie);
             if (!editMovie || !ModelState.IsValid)
             {
-                IActionResult actionResult = Edit(id);
-                return base.RedirectToAction(nameof(actionResult));
+                return RedirectToAction(nameof(Edit));
             }
             return RedirectToAction(nameof(Manage));
         }
 
         [Authorize]
-        [HttpDelete]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
