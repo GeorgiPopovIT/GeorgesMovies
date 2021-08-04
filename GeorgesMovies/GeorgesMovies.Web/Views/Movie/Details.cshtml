@@ -1,0 +1,54 @@
+﻿@model DetailsServiceViewModel
+@{ ViewData["Title"] = Model.Title; }
+
+@{ string actors = string.Join(", ", Model.ActorNames
+                     .Select(x => x.FirstName + " " + x.LastName));
+
+    var movieId = ViewContext.RouteData.Values["id"];
+
+}
+
+
+<div class="row">
+    <div class="col-md-10 embed-responsive embed-responsive-21by9">
+        <iframe class="embed-responsive-item"
+                src="@Model.MovieUrl"
+                title="Georges video player"
+                allowfullscreen>
+        </iframe>
+    </div>
+    <div class="col-md-2 float-right">
+        <h2>Time:</h2>
+        <p>@Model.Time</p>
+
+        <h2>Year of premiere:</h2>
+        <h4>@Model.Year</h4>
+
+        <h3>Director:</h3>
+        <div>@Model.DirectorName</div>
+        <br />
+        <h3>Actors:</h3>
+        <span>@(actors.Any() ? actors : "No actors")</span>
+    </div>
+
+</div>
+<div class="mb-3"></div>
+
+<h2>@Model.Title</h2>
+
+<div class="mb-3"></div>
+
+
+<div class="mb-3"></div>
+<h4>Description:</h4>
+<p>@Model.Review</p>
+
+<div class="mb-3"></div>
+
+<partial name="~/Views/Comment/_PostPartial.cshtml" model="@Model.Comment" />
+   
+
+<div class="mb-4"></div>
+
+<partial name="~/Views/Comment/_AllPartial.cshtml" model="@Model.AllComments" />
+

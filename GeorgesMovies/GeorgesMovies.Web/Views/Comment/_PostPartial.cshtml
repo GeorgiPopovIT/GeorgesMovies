@@ -1,0 +1,21 @@
+﻿@model CommentServiceModel
+
+@{
+    var movieId = ViewContext.RouteData.Values["id"];
+}
+<form method="post">
+    <div class="form-group col-md-4">
+        <label asp-for="Message" class="font-weight-bold">Enter comment</label>
+        <input class="form-control" asp-for="Message" placeholder="Comment...">
+        <span asp-validation-for="Message" class="small text-danger"></span>
+        <button type="submit"
+                id="post-button"
+                class="btn btn-primary .row-click"
+                asp-controller="Comment"
+                asp-action="Post"
+                asp-route-movieId="@movieId">
+            Post
+        </button>
+    </div>
+</form>
+

@@ -1,4 +1,4 @@
-﻿namespace GeorgesMovies.Web.Models.Movies
+﻿namespace GeorgesMovies.Services.Movies
 {
     public class IndexMovieViewModel
     {

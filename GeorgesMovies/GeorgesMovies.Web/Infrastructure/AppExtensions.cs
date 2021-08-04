@@ -42,10 +42,10 @@ namespace GeorgesMovies.Web.Infrastructure
 
             Task.Run(async () =>
             {
-                //if (await roleManager.RoleExistsAsync(AdminRoleName))
-                //{
-                //    return;
-                //}
+                if (await roleManager.RoleExistsAsync(AdminRoleName))
+                {
+                    return;
+                }
                 var role = new IdentityRole { Name = AdminRoleName };
 
                 await roleManager.CreateAsync(role);

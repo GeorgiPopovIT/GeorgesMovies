@@ -5,6 +5,7 @@ using GeorgesMovies.Services.Actors;
 using GeorgesMovies.Services.Comments;
 using GeorgesMovies.Services.Directors;
 using GeorgesMovies.Services.Genres;
+using GeorgesMovies.Services.Home;
 using GeorgesMovies.Services.Movies;
 using GeorgesMovies.Web.Infrastructure;
 using Microsoft.AspNetCore.Builder;
@@ -71,7 +72,7 @@ namespace GeorgesMovies.Web
             services.AddTransient<IDirectorService, DirectorService>();
             services.AddTransient<IGenreService, GenreService>();
             services.AddTransient<ICommentService, CommentService>();
-
+            services.AddTransient<IHomeService, HomeService>();
 
         }
 

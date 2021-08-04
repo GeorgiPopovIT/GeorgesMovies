@@ -1,4 +1,4 @@
-﻿using GeorgesMovies.Web.Models.Movies;
+﻿using GeorgesMovies.Services.Movies;
 using System.Collections.Generic;
 
 namespace GeorgesMovies.Web.Models.Home

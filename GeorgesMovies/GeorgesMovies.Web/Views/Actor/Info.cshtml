@@ -1,0 +1,16 @@
+﻿@model GeorgesMovies.Services.Actors.DTO.ActorInformationServiceModel
+@{ 
+    var name = $"{Model.FirstName} {Model.LastName}";
+
+    ViewData["Title"] = name;
+}
+
+<div>
+    <h2>@name</h2>
+    <br />
+    <h4>Biography:</h4>
+    <p class="text-justify">@(Model.Information != null 
+        ? Model.Information 
+        : "No information about this actor.")
+    </p>
+</div>

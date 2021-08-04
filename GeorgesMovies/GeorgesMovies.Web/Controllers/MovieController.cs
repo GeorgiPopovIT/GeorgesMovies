@@ -106,11 +106,10 @@ namespace GeorgesMovies.Web.Controllers
         }
 
         [Authorize]
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id)
+        [HttpPost]
+        public IActionResult Delete(int movieId)
         {
-            this.movies.Delete(id);
+            this.movies.Delete(movieId);
 
             return RedirectToAction(nameof(Manage));
         }

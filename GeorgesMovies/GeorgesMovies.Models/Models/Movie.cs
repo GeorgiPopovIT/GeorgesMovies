@@ -13,7 +13,9 @@ namespace GeorgesMovies.Models.Models
             this.Directors = new HashSet<Director>();
             this.Comments = new HashSet<Comment>();
         }
+
         public int Id { get; set; }
+
         [Required]
         [MaxLength(MovieTitleMaxLength)]
         public string Title { get; set; }

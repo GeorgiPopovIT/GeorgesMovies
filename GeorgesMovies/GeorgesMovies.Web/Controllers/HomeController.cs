@@ -1,4 +1,5 @@
 ﻿using GeorgesMovies.Data;
+using GeorgesMovies.Services.Home;
 using GeorgesMovies.Web.Models;
 using GeorgesMovies.Web.Models.Home;
 using GeorgesMovies.Web.Models.Movies;
@@ -14,22 +15,16 @@ namespace GeorgesMovies.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly GeorgesMoviesDbContext context;
-        public HomeController(GeorgesMoviesDbContext context)
+        private readonly IHomeService home;
+
+        public HomeController(IHomeService home)
         {
-            this.context = context;
+            this.home = home;
         }
+
         public IActionResult Index()
         {
-            var movies = this.context.Movies
-                 .OrderByDescending(m => m.Id)
-                 .Select(m => new IndexMovieViewModel
-                 {
-                     PictuteUrl = m.PictureUrl,
-                     Title = m.Title
-                 })
-                 .Take(3)
-                 .ToList();
+            var movies = this.home.GetLastThreeMovies();
 
             return View(new IndexViewModel
             {

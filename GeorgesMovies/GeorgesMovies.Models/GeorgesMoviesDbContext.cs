@@ -41,6 +41,25 @@ namespace GeorgesMovies.Data
                  f => f.HasOne<Movie>().WithMany().OnDelete(DeleteBehavior.Restrict)
                 );
 
+            builder.Entity<Comment>()
+                .HasOne(u => u.User)
+                .WithMany(c => c.Comments)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Comment>()
+               .HasOne(m => m.Movie)
+               .WithMany(c => c.Comments)
+               .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Movie>()
+               .HasMany(a => a.Directors)
+               .WithMany(m => m.Movies)
+               .UsingEntity<Dictionary<string, object>>(
+               "DirectorMovie",
+               f => f.HasOne<Director>().WithMany().OnDelete(DeleteBehavior.Restrict),
+                f => f.HasOne<Movie>().WithMany().OnDelete(DeleteBehavior.Restrict)
+               );
+
             base.OnModelCreating(builder);
         }
     }
