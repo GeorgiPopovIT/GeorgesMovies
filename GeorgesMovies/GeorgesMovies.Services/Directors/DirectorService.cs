@@ -15,13 +15,22 @@ namespace GeorgesMovies.Services.Directors
         }
         public Director CreateDirector(string firstName, string lastName)
         {
-            var diretor = new Director()
-            {
-                FirstName = firstName,
-                LastName = lastName
-            };
+            var director = this.context.Directors.FirstOrDefault(d => d.FirstName == firstName
+            && d.LastName == lastName);
 
-            return diretor;
+            if (director == null)
+            {
+                director = new Director()
+                {
+                    FirstName = firstName,
+                    LastName = lastName
+                };
+                this.context.Directors.Add(director);
+                this.context.SaveChanges();
+            }
+
+
+            return director;
         }
         public DirectorFullName GetMovieDirector(Movie currMovie)
         {

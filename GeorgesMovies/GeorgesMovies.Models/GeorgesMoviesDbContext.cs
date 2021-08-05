@@ -22,14 +22,14 @@ namespace GeorgesMovies.Data
         public DbSet<Director> Directors { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Server=.;Database = GeorgesMovies;Integrated Security = true;");
-            }
-            base.OnConfiguring(optionsBuilder);
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        optionsBuilder.UseSqlServer("Server=.;Database = GeorgesMovies;Integrated Security = true;");
+        //    }
+        //    base.OnConfiguring(optionsBuilder);
+        //}
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Movie>()
@@ -51,14 +51,16 @@ namespace GeorgesMovies.Data
                .WithMany(c => c.Comments)
                .OnDelete(DeleteBehavior.Restrict);
 
+            
             builder.Entity<Movie>()
-               .HasMany(a => a.Directors)
-               .WithMany(m => m.Movies)
-               .UsingEntity<Dictionary<string, object>>(
-               "DirectorMovie",
-               f => f.HasOne<Director>().WithMany().OnDelete(DeleteBehavior.Restrict),
-                f => f.HasOne<Movie>().WithMany().OnDelete(DeleteBehavior.Restrict)
-               );
+              .HasOne(m => m.Director)
+              .WithMany(c => c.Movies)
+              .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Movie>()
+              .HasOne(m => m.Genre)
+              .WithMany(c => c.Movies)
+              .OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(builder);
         }

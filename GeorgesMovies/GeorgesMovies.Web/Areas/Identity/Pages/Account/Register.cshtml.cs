@@ -17,21 +17,19 @@ namespace GeorgesMovies.Web.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<User> signInManager;
         private readonly UserManager<User> userManager;
-        private readonly IEmailSender emailSender;
 
         public RegisterModel(
             UserManager<User> userManager,
-            SignInManager<User> signInManager, IEmailSender emailSender)
+            SignInManager<User> signInManager)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
-            this.emailSender = emailSender;
         }
 
         [BindProperty]
         public InputModel Input { get; set; }
 
-        public IList<AuthenticationScheme> ExternalLogins { get; set; }
+        // public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
         public string ReturnUrl { get; set; }
 
@@ -42,6 +40,7 @@ namespace GeorgesMovies.Web.Areas.Identity.Pages.Account
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
+
             [Required]
             public string UserName { get; set; }
 
@@ -62,44 +61,37 @@ namespace GeorgesMovies.Web.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
         }
 
-        public async Task OnGetAsync(string returnUrl = null)
+        public void OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
-            ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            //ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
 
-            ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            // ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
 
             if (ModelState.IsValid)
             {
-                var user = new User 
-                { 
-                    UserName = Input.Email,
+                var user = new User
+                {
+                    UserName = Input.UserName,
                     Email = Input.Email,
-                    FirstName = Input.FistName ,
+                    FirstName = Input.FistName,
                     LastName = Input.LastName
                 };
-                var result = await userManager.CreateAsync(user, Input.Password);
+                var result = await this.userManager.CreateAsync(user, Input.Password);
+
                 if (result.Succeeded)
                 {
-                    await this.emailSender.SendEmailAsync(this.Input.Email,
-                        "Confirm you emia", "<h1>Hello</h1>");
 
-                    if (userManager.Options.SignIn.RequireConfirmedAccount)
-                    {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
-                    }
-                    else
-                    {
-                        await signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
-                    }
+                    await signInManager.SignInAsync(user, isPersistent: false);
+                    return LocalRedirect(returnUrl);
                 }
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);

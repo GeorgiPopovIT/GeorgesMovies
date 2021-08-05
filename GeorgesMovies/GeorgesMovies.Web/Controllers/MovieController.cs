@@ -1,6 +1,4 @@
-﻿using GeorgesMovies.Data;
-using GeorgesMovies.Services.Comments;
-using GeorgesMovies.Services.Genres;
+﻿using GeorgesMovies.Services.Genres;
 using GeorgesMovies.Services.Movies;
 using GeorgesMovies.Services.Movies.DTO;
 using GeorgesMovies.Web.Models.Movies;
@@ -12,12 +10,9 @@ namespace GeorgesMovies.Web.Controllers
     public class MovieController : Controller
     {
         private readonly IGenreService genres;
-        private readonly GeorgesMoviesDbContext context;
         private readonly IMovieService movies;
-        public MovieController(GeorgesMoviesDbContext context,
-            IMovieService movies, IGenreService genres)
+        public MovieController(IMovieService movies, IGenreService genres)
         {
-            this.context = context;
             this.movies = movies;
             this.genres = genres;
         }
@@ -107,9 +102,9 @@ namespace GeorgesMovies.Web.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Delete(int movieId)
+        public IActionResult Delete(int id)
         {
-            this.movies.Delete(movieId);
+            this.movies.Delete(id);
 
             return RedirectToAction(nameof(Manage));
         }

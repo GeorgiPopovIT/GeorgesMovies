@@ -31,7 +31,7 @@ namespace GeorgesMovies.Web.Controllers
         {
             var isActorInData = this.actors.ExistActorInMovie(actorToAdd);
 
-            if (!isActorInData)
+            if (isActorInData)
             {
                 this.ModelState.AddModelError(nameof(actorToAdd.FirstName), "This actor is already in movie");
             }

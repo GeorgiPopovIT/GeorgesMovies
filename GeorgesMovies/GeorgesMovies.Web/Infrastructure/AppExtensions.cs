@@ -3,6 +3,7 @@ using GeorgesMovies.Data;
 using GeorgesMovies.Models.Models;
 using GeorgesMovies.Services.Genres;
 using Microsoft.AspNetCore.Builder;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,7 +12,6 @@ using static GeorgesMovies.Web.WebConstants;
 
 namespace GeorgesMovies.Web.Infrastructure
 {
-
     public static class AppExtensions
     {
         private const string adminEmail = "gogopopo@gmail.com";
@@ -66,6 +66,11 @@ namespace GeorgesMovies.Web.Infrastructure
             })
                 .GetAwaiter()
                 .GetResult();
+        }
+
+        public static string GetUserId(this ClaimsPrincipal user)
+        {
+            return user.FindFirstValue(ClaimTypes.NameIdentifier);
         }
     }
 }

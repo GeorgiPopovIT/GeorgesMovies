@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using GeorgesMovies.Services.Actors.DTO;
-using GeorgesMovies.Services.Comments;
+using GeorgesMovies.Services.Comments.DTO;
 
 namespace GeorgesMovies.Services.Movies.DTO
 {

@@ -10,7 +10,6 @@ namespace GeorgesMovies.Models.Models
         public Movie()
         {
             this.Actors = new HashSet<Actor>();
-            this.Directors = new HashSet<Director>();
             this.Comments = new HashSet<Comment>();
         }
 
@@ -34,12 +33,17 @@ namespace GeorgesMovies.Models.Models
         public DateTime ReleaseDate { get; set; }
         [Required]
         public decimal Rating { get; set; }
+
         [Required]
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
 
+        [Required]
+        public int DirectorId { get; set; }
+        public Director Director { get; set; }
+
         public ICollection<Actor> Actors { get; set; }
-        public ICollection<Director> Directors { get; set; }
+        
         public ICollection<Comment> Comments { get; set; }
     }
 }

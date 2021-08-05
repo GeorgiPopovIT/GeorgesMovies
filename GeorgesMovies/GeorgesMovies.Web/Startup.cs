@@ -16,7 +16,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using System;
 
 namespace GeorgesMovies.Web
 {
@@ -50,7 +50,9 @@ namespace GeorgesMovies.Web
                 })
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<GeorgesMoviesDbContext>();
-            services.AddControllersWithViews();
+
+            services.AddControllersWithViews()
+                .AddCookieTempDataProvider();
 
             services.AddAutoMapper(typeof(Startup));
 
@@ -60,7 +62,11 @@ namespace GeorgesMovies.Web
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
             });
 
-            
+            services.AddMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(2);
+            });
 
             services.AddMvc(options =>
             {
@@ -94,9 +100,8 @@ namespace GeorgesMovies.Web
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
 

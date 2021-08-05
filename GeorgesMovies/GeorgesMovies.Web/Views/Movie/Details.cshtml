@@ -1,13 +1,18 @@
 ﻿@model DetailsServiceViewModel
-@{ ViewData["Title"] = Model.Title; }
 
-@{ string actors = string.Join(", ", Model.ActorNames
+@{
+    ViewData["Title"] = Model.Title;
+
+    string actors = string.Join(", ", Model.ActorNames
                      .Select(x => x.FirstName + " " + x.LastName));
 
     var movieId = ViewContext.RouteData.Values["id"];
-
 }
 
+@if (this.TempData.ContainsKey("Message"))
+{
+    <div class="alert alert-success">@this.TempData["Message"]</div>
+}
 
 <div class="row">
     <div class="col-md-10 embed-responsive embed-responsive-21by9">

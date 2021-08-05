@@ -1,12 +1,12 @@
 ﻿using GeorgesMovies.Services.Comments;
+using GeorgesMovies.Services.Comments.DTO;
 using GeorgesMovies.Services.Movies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace GeorgesMovies.Web.Controllers
 {
-    //[ApiController]
-    //[Route("api/comment")]
+    
     public class CommentController : Controller
     {
         private readonly ICommentService comments;
@@ -21,6 +21,8 @@ namespace GeorgesMovies.Web.Controllers
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
                 
             this.comments.Create(userId,model);
+
+            this.TempData["Message"] = "Succsessfully added comment.";
 
              return RedirectToAction("Details",
                  "Movie",new {id = model.MovieId });

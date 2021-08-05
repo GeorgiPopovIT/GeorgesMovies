@@ -19,21 +19,6 @@ namespace GeorgesMovies.Models.Migrations
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DirectorMovie", b =>
-                {
-                    b.Property<int>("DirectorsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MoviesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DirectorsId", "MoviesId");
-
-                    b.HasIndex("MoviesId");
-
-                    b.ToTable("DirectorMovie");
-                });
-
             modelBuilder.Entity("GeorgesMovies.Models.Models.Actor", b =>
                 {
                     b.Property<int>("Id")
@@ -70,12 +55,14 @@ namespace GeorgesMovies.Models.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Message")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -132,6 +119,9 @@ namespace GeorgesMovies.Models.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("DirectorId")
+                        .HasColumnType("int");
+
                     b.Property<int>("GenreId")
                         .HasColumnType("int");
 
@@ -167,6 +157,8 @@ namespace GeorgesMovies.Models.Migrations
                         .HasColumnType("nvarchar(35)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DirectorId");
 
                     b.HasIndex("GenreId");
 
@@ -394,21 +386,6 @@ namespace GeorgesMovies.Models.Migrations
                     b.ToTable("MoviesActors");
                 });
 
-            modelBuilder.Entity("DirectorMovie", b =>
-                {
-                    b.HasOne("GeorgesMovies.Models.Models.Director", null)
-                        .WithMany()
-                        .HasForeignKey("DirectorsId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("GeorgesMovies.Models.Models.Movie", null)
-                        .WithMany()
-                        .HasForeignKey("MoviesId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("GeorgesMovies.Models.Models.Comment", b =>
                 {
                     b.HasOne("GeorgesMovies.Models.Models.Movie", "Movie")
@@ -420,7 +397,8 @@ namespace GeorgesMovies.Models.Migrations
                     b.HasOne("GeorgesMovies.Models.Models.User", "User")
                         .WithMany("Comments")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Movie");
 
@@ -429,11 +407,19 @@ namespace GeorgesMovies.Models.Migrations
 
             modelBuilder.Entity("GeorgesMovies.Models.Models.Movie", b =>
                 {
+                    b.HasOne("GeorgesMovies.Models.Models.Director", "Director")
+                        .WithMany("Movies")
+                        .HasForeignKey("DirectorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("GeorgesMovies.Models.Models.Genre", "Genre")
                         .WithMany("Movies")
                         .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Director");
 
                     b.Navigation("Genre");
                 });
@@ -502,6 +488,11 @@ namespace GeorgesMovies.Models.Migrations
                         .HasForeignKey("MoviesId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("GeorgesMovies.Models.Models.Director", b =>
+                {
+                    b.Navigation("Movies");
                 });
 
             modelBuilder.Entity("GeorgesMovies.Models.Models.Genre", b =>

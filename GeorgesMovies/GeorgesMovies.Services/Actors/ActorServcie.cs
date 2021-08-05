@@ -75,6 +75,10 @@ namespace GeorgesMovies.Services.Actors
                 .Where(a => a.FirstName == actorModel.FirstName
             && a.LastName == actorModel.LastName)
                 .FirstOrDefault();
+            if (actor == null)
+            {
+                return false;
+            }
 
             if (actor.Movies.Any(a => a.Id == actorModel.MovieId))
             {

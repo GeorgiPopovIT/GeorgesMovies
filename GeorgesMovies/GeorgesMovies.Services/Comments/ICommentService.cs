@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GeorgesMovies.Services.Comments.DTO;
+using System.Collections.Generic;
 
 namespace GeorgesMovies.Services.Comments
 {

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using GeorgesMovies.Data;
 using GeorgesMovies.Models.Models;
 using GeorgesMovies.Services.Mapping;
+using GeorgesMovies.Services.Comments.DTO;
 
 namespace GeorgesMovies.Services.Comments
 {

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using GeorgesMovies.Models.Models;
 using GeorgesMovies.Services.Actors.DTO;
-using GeorgesMovies.Services.Comments;
+using GeorgesMovies.Services.Comments.DTO;
 using GeorgesMovies.Services.Movies.DTO;
 
 namespace GeorgesMovies.Services.Mapping
@@ -10,7 +10,8 @@ namespace GeorgesMovies.Services.Mapping
     {
         public MappingProfile()
         {
-            //Movies
+            //Movies    
+
             this.CreateMap<MovieServiceFormModel, Movie>()
                 .ReverseMap();
 

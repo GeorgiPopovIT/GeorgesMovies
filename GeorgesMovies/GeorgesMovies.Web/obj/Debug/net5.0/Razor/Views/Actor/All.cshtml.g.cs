@@ -28,27 +28,34 @@ using GeorgesMovies.Web.Models;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\Views\_ViewImports.cshtml"
-using GeorgesMovies.Web.Models.Movies;
+using GeorgesMovies.Web.Infrastructure;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\Views\_ViewImports.cshtml"
-using GeorgesMovies.Services.Movies.DTO;
+using GeorgesMovies.Web.Models.Movies;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\Views\_ViewImports.cshtml"
-using GeorgesMovies.Services.Comments;
+using GeorgesMovies.Services.Movies.DTO;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\Views\_ViewImports.cshtml"
+using GeorgesMovies.Services.Comments.DTO;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"68f7e1fb86cb51d6d8081df7fd167628f16da51d", @"/Views/Actor/All.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c734020ec190b69df4ec0eb9f0e628d97958471e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ff494f8b0fc7642896d724588a0e21b5b258fce0", @"/Views/_ViewImports.cshtml")]
     public class Views_Actor_All : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<GeorgesMovies.Web.Models.Actors.AllActorsViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Actor", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -96,7 +103,7 @@ using GeorgesMovies.Services.Comments;
 #line hidden
 #nullable disable
             WriteLiteral("        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68f7e1fb86cb51d6d8081df7fd167628f16da51d5489", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68f7e1fb86cb51d6d8081df7fd167628f16da51d5711", async() => {
                 WriteLiteral("\n            ");
 #nullable restore
 #line 16 "C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\Views\Actor\All.cshtml"

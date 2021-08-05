@@ -30,6 +30,7 @@ namespace GeorgesMovies.Services.Movies
             this.actors = actors;
             this.context = context;
             this.directors = directors;
+            this.mapper = mapper;
             this.mapper = MapperCreator.InitializeMapper(mapper);
             this.genres = genres;
             this.comment = comment;
@@ -37,16 +38,26 @@ namespace GeorgesMovies.Services.Movies
 
         public void Add(MovieServiceFormModel movie)
         {
-            var director = new Director()
+            var director = this.directors
+                .CreateDirector(movie.Director.Split()[0], movie.Director.Split()[1]);
+
+            //var movieData = this.mapper.Map<Movie>(movie);
+            var movieData = new Movie
             {
-                FirstName = movie.Director.Split()[0],
-                LastName = movie.Director.Split()[1]
+                Title = movie.Title,
+                Time = movie.Time,
+                ReleaseDate = movie.ReleaseDate,
+                Overview = movie.Overview,
+                Review = movie.Review,
+                GenreId = movie.GenreId,
+                DirectorId = director.Id,
+                MovieUrl = movie.MovieUrl,
+                PictureUrl = movie.PictureUrl,
+                Rating = movie.Rating
             };
-
-            var movieData = this.mapper.Map<Movie>(movie);
-
-            this.context.Directors.Add(director);
-            movieData.Directors.Add(director);
+            //movieData.DirectorId = director.Id;
+            //this.context.Directors.Add(director);
+            //movieData.Directors.Add(director);
 
             this.context.Movies.Add(movieData);
             this.context.SaveChanges();
@@ -130,6 +141,17 @@ namespace GeorgesMovies.Services.Movies
                 .FirstOrDefault(d => d.FirstName + " " + d.LastName
                 == model.Director);
 
+            if (directorMovie == null)
+            {
+                directorMovie = new Director()
+                {
+                    FirstName = model.Director.Split()[0],
+                    LastName = model.Director.Split()[1]
+                };
+                //movie.Directors.Add(directorMovie);
+                this.context.Directors.Add(directorMovie);
+            }
+
             //movie = this.mapper.Map<Movie>(model);
             movie.Title = model.Title;
             movie.Time = model.Time;
@@ -140,17 +162,7 @@ namespace GeorgesMovies.Services.Movies
             movie.GenreId = model.GenreId;
             movie.Rating = model.Rating;
             movie.Overview = model.Overview;
-
-            if (directorMovie == null)
-            {
-                directorMovie = new Director()
-                {
-                    FirstName = model.Director.Split()[0],
-                    LastName = model.Director.Split()[1]
-                };
-                movie.Directors.Add(directorMovie);
-                this.context.Directors.Add(directorMovie);
-            }
+            movie.DirectorId = directorMovie.Id;
 
             this.context.SaveChanges();
 
