@@ -1,6 +1,5 @@
 ﻿using GeorgesMovies.Services.Comments;
 using GeorgesMovies.Services.Comments.DTO;
-using GeorgesMovies.Services.Movies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -10,6 +9,7 @@ namespace GeorgesMovies.Web.Controllers
     public class CommentController : Controller
     {
         private readonly ICommentService comments;
+
         public CommentController(ICommentService comments)
         {
             this.comments = comments;

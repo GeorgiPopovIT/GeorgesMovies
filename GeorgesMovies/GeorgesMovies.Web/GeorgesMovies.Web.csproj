@@ -23,8 +23,4 @@
     <ProjectReference Include="..\GeorgesMovies.Services\GeorgesMovies.Services.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\Api\" />
-  </ItemGroup>
-
 </Project>

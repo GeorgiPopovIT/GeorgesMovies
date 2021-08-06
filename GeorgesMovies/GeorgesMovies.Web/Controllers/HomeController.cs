@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
+using static GeorgesMovies.Web.WebConstants.Cache;
+
 namespace GeorgesMovies.Web.Controllers
 {
     public class HomeController : Controller
@@ -23,9 +25,7 @@ namespace GeorgesMovies.Web.Controllers
 
         public IActionResult Index()
         {
-            const string latestThreeMoviesCacheKey = "LatestThreeMoviesKey";
-
-            var movies = this.memoryCache.Get<List<IndexMovieViewModel>>(latestThreeMoviesCacheKey);
+            var movies = this.memoryCache.Get<List<IndexMovieViewModel>>(LatestThreeMoviesCacheKey);
             if (movies == null)
             {
                 movies = this.home.GetLastThreeMovies();
@@ -33,7 +33,7 @@ namespace GeorgesMovies.Web.Controllers
                 var cacheOptions = new MemoryCacheEntryOptions()
                     .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
 
-                this.memoryCache.Set(latestThreeMoviesCacheKey, movies,cacheOptions);
+                this.memoryCache.Set(LatestThreeMoviesCacheKey, movies,cacheOptions);
             }
 
             return View(new IndexViewModel

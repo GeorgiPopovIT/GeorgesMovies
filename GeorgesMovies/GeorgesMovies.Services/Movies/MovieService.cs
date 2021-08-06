@@ -41,7 +41,6 @@ namespace GeorgesMovies.Services.Movies
             var director = this.directors
                 .CreateDirector(movie.Director.Split()[0], movie.Director.Split()[1]);
 
-            //var movieData = this.mapper.Map<Movie>(movie);
             var movieData = new Movie
             {
                 Title = movie.Title,
@@ -55,9 +54,7 @@ namespace GeorgesMovies.Services.Movies
                 PictureUrl = movie.PictureUrl,
                 Rating = movie.Rating
             };
-            //movieData.DirectorId = director.Id;
-            //this.context.Directors.Add(director);
-            //movieData.Directors.Add(director);
+            
 
             this.context.Movies.Add(movieData);
             this.context.SaveChanges();
@@ -129,6 +126,7 @@ namespace GeorgesMovies.Services.Movies
             result.AllComments = this.comment.All(id);
             return result;
         }
+
         public bool Edit(int id, MovieServiceFormModel model)
         {
             var movie = this.context.Movies.Find(id);
@@ -152,7 +150,6 @@ namespace GeorgesMovies.Services.Movies
                 this.context.Directors.Add(directorMovie);
             }
 
-            //movie = this.mapper.Map<Movie>(model);
             movie.Title = model.Title;
             movie.Time = model.Time;
             movie.ReleaseDate = model.ReleaseDate;
