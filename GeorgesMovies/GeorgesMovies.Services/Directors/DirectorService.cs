@@ -1,14 +1,14 @@
-﻿using GeorgesMovies.Data;
+﻿using System.Linq;
+using GeorgesMovies.Data;
 using GeorgesMovies.Models.Models;
 using GeorgesMovies.Services.Directors.DTO;
-using GeorgesMovies.Services.Movies.DTO;
-using System.Linq;
 
 namespace GeorgesMovies.Services.Directors
 {
     public class DirectorService : IDirectorService
     {
         private readonly GeorgesMoviesDbContext context;
+
         public DirectorService(GeorgesMoviesDbContext context)
         {
             this.context = context;
@@ -32,6 +32,7 @@ namespace GeorgesMovies.Services.Directors
 
             return director;
         }
+
         public DirectorFullName GetMovieDirector(Movie currMovie)
         {
             return this.context.Directors
@@ -42,7 +43,6 @@ namespace GeorgesMovies.Services.Directors
                 })
                 .FirstOrDefault();
         }
-
 
         public bool IsDirectorInMovie(string directorNames)
         {

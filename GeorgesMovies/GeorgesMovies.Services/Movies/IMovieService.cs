@@ -19,13 +19,16 @@ namespace GeorgesMovies.Services.Movies
         DetailsServiceViewModel Details(int id);
 
         void Delete(int id);
+
         bool Edit(int id, MovieServiceFormModel model);
 
         MovieServiceFormModel GetMovieById(int id);
+
         IQueryable<AllMovieServiceModel> GetMoviesListing();
+
         IEnumerable<ManageServiceViewModel> ManageListing();
+
         bool IsMovieExist(MovieServiceFormModel movie);
 
-        //int GetMovieId(int id);
     }
 }

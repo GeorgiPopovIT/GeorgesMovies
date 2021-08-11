@@ -1,0 +1,13 @@
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.deps.json
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.runtimeconfig.json
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.runtimeconfig.dev.json
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Models\Debug\net5.0\ref\GeorgesMovies.Models.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.csproj.AssemblyReference.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.AssemblyInfoInputs.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.AssemblyInfo.cs
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.csproj.CopyComplete
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Models\Debug\net5.0\ref\GeorgesMovies.Models.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Models\Debug\net5.0\GeorgesMovies.Models.genruntimeconfig.cache

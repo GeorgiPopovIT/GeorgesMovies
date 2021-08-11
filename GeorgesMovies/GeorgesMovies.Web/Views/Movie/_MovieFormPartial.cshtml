@@ -1,4 +1,5 @@
-﻿@model MovieServiceFormModel
+﻿@using GeorgesMovies.Web.Areas.Admin;
+@model MovieServiceFormModel
 
 <h2 class="text-center">Add movie</h2>
 <div class="row">
@@ -49,18 +50,17 @@
                 <select asp-for="GenreId" class="form-control">
                     @foreach (var genre in Model.Genres)
                     {
-                        <option value="@genre.Id">@genre.Name</option>
-                    }
+        <option value="@genre.Id">@genre.Name</option>}
                 </select>
             </div>
             <div class="form-group">
                 <label asp-for="Rating">Rating</label>
-                <input asp-for="Rating" class="form-control" placeholder="Enter rating" />
+                <input asp-for="Rating"  class="form-control" placeholder="Enter rating" />
                 <span asp-validation-for="Rating" class="small text-danger"></span>
             </div>
 
             <button type="submit" class="btn btn-primary float-right">Save</button>
-            <a class="btn btn-secondary float-left" asp-controller="Movie" asp-action="Manage">Go Back</a>
+            <a class="btn btn-secondary float-left" asp-area="@AdminAreaConstants.AreaName" asp-controller="Movie" asp-action="Manage">Go Back</a>
         </form>
     </div>
 </div>

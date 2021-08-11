@@ -26,6 +26,7 @@ namespace GeorgesMovies.Web.Controllers
         public IActionResult Index()
         {
             var movies = this.memoryCache.Get<List<IndexMovieViewModel>>(LatestThreeMoviesCacheKey);
+
             if (movies == null)
             {
                 movies = this.home.GetLastThreeMovies();
@@ -46,7 +47,7 @@ namespace GeorgesMovies.Web.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }

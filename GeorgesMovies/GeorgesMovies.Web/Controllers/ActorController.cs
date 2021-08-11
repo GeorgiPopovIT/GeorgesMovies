@@ -1,10 +1,11 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using GeorgesMovies.Services.Actors;
 using GeorgesMovies.Services.Actors.DTO;
 using GeorgesMovies.Web.Models.Actors;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+
+using static GeorgesMovies.Web.WebConstants;
 
 
 namespace GeorgesMovies.Web.Controllers
@@ -12,12 +13,13 @@ namespace GeorgesMovies.Web.Controllers
     public class ActorController : Controller
     {
         private readonly IActorService actors;
+
         public ActorController(IActorService actors)
         {
             this.actors = actors;
         }
 
-        [Authorize]
+        [Authorize(Roles = AdminRoleName)]
         public IActionResult Add()
         {
             return View(new AddActorServiceModel
@@ -25,7 +27,8 @@ namespace GeorgesMovies.Web.Controllers
                 Movies = this.actors.GetMoviesTitles()
             });
         }
-        [Authorize]
+
+        [Authorize(Roles = AdminRoleName)]
         [HttpPost]
         public IActionResult Add(AddActorServiceModel actorToAdd)
         {
@@ -46,6 +49,7 @@ namespace GeorgesMovies.Web.Controllers
 
             return RedirectToAction("Manage", "Movie");
         }
+
         [Authorize]
         public IActionResult All()
         {
@@ -56,6 +60,7 @@ namespace GeorgesMovies.Web.Controllers
 
             return View(actors);
         }
+
         [Authorize]
         public IActionResult Info(int id)
         {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text.Encodings.Web;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using GeorgesMovies.Models.Models;
@@ -10,7 +6,6 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
 namespace GeorgesMovies.Web.Areas.Identity.Pages.Account
 {
@@ -61,7 +56,7 @@ namespace GeorgesMovies.Web.Areas.Identity.Pages.Account
 
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
-           // ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            //ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
             ReturnUrl = returnUrl;
         }
@@ -70,7 +65,7 @@ namespace GeorgesMovies.Web.Areas.Identity.Pages.Account
         {
             returnUrl ??= Url.Content("~/");
 
-           // ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            //ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
             if (ModelState.IsValid)
             {

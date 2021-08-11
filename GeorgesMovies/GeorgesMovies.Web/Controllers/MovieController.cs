@@ -5,6 +5,8 @@ using GeorgesMovies.Web.Models.Movies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+using static GeorgesMovies.Web.WebConstants;
+
 namespace GeorgesMovies.Web.Controllers
 {
     public class MovieController : Controller
@@ -76,6 +78,7 @@ namespace GeorgesMovies.Web.Controllers
         public IActionResult Details(int id)
         {
             var detailQuery = this.movies.Details(id);
+
             return View(detailQuery);
         }
 
@@ -97,7 +100,9 @@ namespace GeorgesMovies.Web.Controllers
             {
                 return RedirectToAction(nameof(Edit));
             }
-            return RedirectToAction(nameof(Manage));
+            return RedirectToAction(nameof(Manage),
+                nameof(MovieController),
+                new {area = AdminRoleName});
         }
 
         [Authorize]

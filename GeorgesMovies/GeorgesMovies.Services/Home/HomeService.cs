@@ -21,7 +21,7 @@ namespace GeorgesMovies.Services.Home
                  {
                      PictuteUrl = m.PictureUrl,
                      Title = m.Title
-                 })
+                 }) 
                  .Take(3)
                  .ToList();
 

@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 
 using static GeorgesMovies.Web.WebConstants;
+using System.Linq;
 
 namespace GeorgesMovies.Web.Infrastructure
 {
     public static class AppExtensions
     {
-        private const string adminEmail = "gogopopo@gmail.com";
-        private const string adminPassword = "samobotev";
+        private const string adminEmail = "admin@gmail.com";
+        private const string adminPassword = "123456";
         private const string adminUsername = "gorges";
 
         public static IApplicationBuilder PrepareDatabase(
@@ -30,7 +31,7 @@ namespace GeorgesMovies.Web.Infrastructure
 
             AddDefaultGenres.SeedGenres(data);
 
-            SeedAdministrator(servicedProvider);
+           // SeedAdministrator(servicedProvider);
 
             return app;
         }
@@ -53,8 +54,8 @@ namespace GeorgesMovies.Web.Infrastructure
                 var user = new User
                 {
                     Email = adminEmail,
-                    UserName = adminUsername,
-                    FirstName = "Gorges",
+                    UserName = adminEmail,
+                    FirstName = "Admin",
                     LastName = "Adminov"
                 };
 
@@ -64,8 +65,8 @@ namespace GeorgesMovies.Web.Infrastructure
 
 
             })
-                .GetAwaiter()
-                .GetResult();
+             .GetAwaiter()
+             .GetResult();
         }
 
         public static string GetUserId(this ClaimsPrincipal user)
