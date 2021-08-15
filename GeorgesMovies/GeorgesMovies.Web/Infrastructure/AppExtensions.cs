@@ -31,7 +31,7 @@ namespace GeorgesMovies.Web.Infrastructure
 
             AddDefaultGenres.SeedGenres(data);
 
-           // SeedAdministrator(servicedProvider);
+            SeedAdministrator(servicedProvider);
 
             return app;
         }

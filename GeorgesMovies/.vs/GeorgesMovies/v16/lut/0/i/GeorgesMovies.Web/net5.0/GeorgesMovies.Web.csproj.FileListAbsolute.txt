@@ -285,7 +285,6 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Web\bin\Debug\net5.0\refs\WindowsBase.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Web\bin\Debug\net5.0\GeorgesMovies.Web.Views.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Web\bin\Debug\net5.0\GeorgesMovies.Web.Views.pdb
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Web\net5.0\GeorgesMovies.Web.csproj.AssemblyReference.cache
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Web\net5.0\GeorgesMovies.Web.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Web\net5.0\GeorgesMovies.Web.AssemblyInfoInputs.cache
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Web\net5.0\GeorgesMovies.Web.AssemblyInfo.cs
@@ -331,3 +330,4 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Web\net5.0\GeorgesMovies.Web.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Web\net5.0\ref\GeorgesMovies.Web.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Web\net5.0\GeorgesMovies.Web.genruntimeconfig.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Web\net5.0\GeorgesMovies.Web.csproj.AssemblyReference.cache

@@ -48,7 +48,7 @@ namespace GeorgesMovies.Services.Comments
         public IEnumerable<AllCommentsViewModel> GetAllComments(int movieId)
         {
             return this.context.Comments
-                .Where(c => c.Movie.Id == movieId)
+                .Where(c => c.MovieId == movieId)
                 .ProjectTo<AllCommentsViewModel>(this.mapper.ConfigurationProvider)
                 .ToList();
         }

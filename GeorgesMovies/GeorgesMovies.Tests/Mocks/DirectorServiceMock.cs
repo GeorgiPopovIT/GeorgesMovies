@@ -5,12 +5,13 @@ namespace GeorgesMovies.Tests.Mocks
 {
     public static class DirectorServiceMock
     {
-        public static  IDirectorService Instance
+        public static IDirectorService Instance
         {
             get
             {
-                var mock = new Mock<DirectorService>();
+                var context = DatabaseMock.Instance;
 
+                var mock = new Mock<DirectorService>(context);
                 return mock.Object;
             }
         }

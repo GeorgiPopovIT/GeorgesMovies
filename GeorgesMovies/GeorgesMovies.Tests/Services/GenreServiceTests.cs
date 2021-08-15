@@ -2,8 +2,6 @@
 using GeorgesMovies.Services.Genres;
 using GeorgesMovies.Tests.Mocks;
 using GeorgesMovies.Models.Models;
-using System.Collections.Generic;
-using GeorgesMovies.Services.Genres.DTO;
 
 namespace GeorgesMovies.Tests.Services
 {

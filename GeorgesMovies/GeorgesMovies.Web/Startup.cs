@@ -55,11 +55,11 @@ namespace GeorgesMovies.Web
 
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddAuthentication().AddFacebook(facebookOptions =>
-            {
-                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
-                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            });
+            //services.AddAuthentication().AddFacebook(facebookOptions =>
+            //{
+            //    facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+            //    facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            //});
 
             services.AddMemoryCache();
 
@@ -74,7 +74,7 @@ namespace GeorgesMovies.Web
             });
 
             services.AddTransient<IMovieService, MovieService>();
-            services.AddTransient<IActorService, ActorServcie>();
+            services.AddTransient<IActorService, ActorService>();
             services.AddTransient<IDirectorService, DirectorService>();
             services.AddTransient<IGenreService, GenreService>();
             services.AddTransient<ICommentService, CommentService>();

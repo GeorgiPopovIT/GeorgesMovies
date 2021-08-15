@@ -11,12 +11,12 @@ using GeorgesMovies.Services.Mapping;
 
 namespace GeorgesMovies.Services.Actors
 {
-    public class ActorServcie : IActorService
+    public class ActorService : IActorService
     {
         private readonly GeorgesMoviesDbContext context;
         private readonly IMapper mapper;
 
-        public ActorServcie(GeorgesMoviesDbContext context, IMapper mapper)
+        public ActorService(GeorgesMoviesDbContext context, IMapper mapper)
         {
             this.context = context;
             this.mapper = MapperCreator.InitializeMapper(mapper);
@@ -67,7 +67,7 @@ namespace GeorgesMovies.Services.Actors
             return this.context.Actors.Where(a => a.Movies.Contains(currMovie))
                 .ProjectTo<ActorFullNameServiceModel>(this.mapper.ConfigurationProvider)
                 .ToList();
-        }
+            }
 
         public bool ExistActorInMovie(AddActorServiceModel actorModel)
         {
@@ -75,6 +75,7 @@ namespace GeorgesMovies.Services.Actors
                 .Where(a => a.FirstName == actorModel.FirstName
             && a.LastName == actorModel.LastName)
                 .FirstOrDefault();
+
             if (actor == null)
             {
                 return false;

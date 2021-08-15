@@ -1,5 +1,6 @@
 ﻿using GeorgesMovies.Services.Home;
 using GeorgesMovies.Services.Movies;
+using GeorgesMovies.Tests.Mocks;
 using GeorgesMovies.Web.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -33,7 +34,7 @@ namespace GeorgesMovies.Tests.Controllers
         [Fact]
         public void IndexActionShouldReturnView()
         {
-            //var controller = new HomeController()
+            
         }
 
     }

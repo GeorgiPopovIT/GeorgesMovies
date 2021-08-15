@@ -5,8 +5,7 @@ using System.Security.Claims;
 
 namespace GeorgesMovies.Web.Controllers
 {
-    //[ApiController]
-    //[Route("api/comment")]
+    
     public class CommentController : Controller
     {
         private readonly ICommentService comments;
@@ -14,7 +13,7 @@ namespace GeorgesMovies.Web.Controllers
         public CommentController(ICommentService comments)
         {
             this.comments = comments;
-        }
+        }   
        
         [HttpPost]
         public IActionResult Post(CommentServiceModel model)
@@ -23,7 +22,7 @@ namespace GeorgesMovies.Web.Controllers
                 
             this.comments.Create(userId,model);
 
-           this.TempData["Message"] = "Succsessfully added comment.";
+            this.TempData["Message"] = "Succsessfully added comment.";
 
              return RedirectToAction("Details",
                  "Movie",new {id = model.MovieId });

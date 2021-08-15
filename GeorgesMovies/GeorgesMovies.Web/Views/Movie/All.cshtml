@@ -6,7 +6,12 @@
 @if (!Model.Movies.Any())
 {
 <h1>There is no such movie/movies</h1>
-                <a class="btn btn-secondary  float-left" asp-controller="Movie" asp-action="All">Go Back</a>}
+
+                <a class="btn btn-secondary  float-left"
+                   asp-controller="Movie"
+                   asp-action="All">Go Back
+                </a>
+ }
 
 
 <form method="get">
@@ -27,7 +32,11 @@
             </select>
         </div>
 
-        <input type="submit" class="btn btn-info" asp-controller="Movie" asp-action="All" value="Search" />
+        <input type="submit"
+               class="btn btn-info"
+               asp-controller="Movie" 
+               asp-action="All" 
+               value="Search" />
     </div>
 </form>
 
@@ -42,7 +51,12 @@
         <div class="card-body">
             <h5 class="card-title">@movie.Title</h5>
             <p class="card-text">@movie.Overview</p>
-            <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id" class="btn btn-primary">Go to trailer</a>
+            <a asp-controller="Movie"
+               asp-action="Details" 
+               asp-route-id="@movie.Id" 
+               class="btn btn-primary"
+               >Go to trailer
+            </a>
         </div>
     </div>
 </div>}
@@ -55,7 +69,8 @@
     {
         previousPage = 1;
     }
-    var maxPage = Math.Ceiling((double)Model.TotalMovies / AllMoviesViewModel.MoviesPerPage); }
+    var maxPage = Math.Ceiling((double)Model.TotalMovies / AllMoviesViewModel.MoviesPerPage);
+ }
 
 <div class="row">
     <div class="col-md-6">

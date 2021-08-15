@@ -1,14 +1,19 @@
-﻿using GeorgesMovies.Models.Models;
+﻿using Xunit;
+using System.Linq;
+using GeorgesMovies.Data;
+using GeorgesMovies.Models.Models;
 using GeorgesMovies.Services.Directors;
 using GeorgesMovies.Services.Directors.DTO;
 using GeorgesMovies.Tests.Mocks;
-using System.Linq;
-using Xunit;
+
 
 namespace GeorgesMovies.Tests.Services
 {
     public class DirectorServiceTests
     {
+        private GeorgesMoviesDbContext globalContext = DatabaseMock.Instance;
+
+
         [Fact]
         public void CreateDirectorSuccsessfully()
         {

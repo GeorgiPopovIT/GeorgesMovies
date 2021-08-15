@@ -54,7 +54,7 @@ namespace GeorgesMovies.Services.Movies
                 PictureUrl = movie.PictureUrl,
                 Rating = movie.Rating
             };
-            
+
 
             this.context.Movies.Add(movieData);
             this.context.SaveChanges();
@@ -135,20 +135,23 @@ namespace GeorgesMovies.Services.Movies
             {
                 return false;
             }
-            var directorMovie = this.context.Directors
-                .FirstOrDefault(d => d.FirstName + " " + d.LastName
-                == model.Director);
+            //var directorMovie = this.context.Directors
+            //    .FirstOrDefault(d => d.FirstName + " " + d.LastName
+            //    == model.Director);
 
-            if (directorMovie == null)
-            {
-                directorMovie = new Director()
-                {
-                    FirstName = model.Director.Split()[0],
-                    LastName = model.Director.Split()[1]
-                };
-                //movie.Directors.Add(directorMovie);
-                this.context.Directors.Add(directorMovie);
-            }
+            //if (directorMovie == null)
+            //{
+            //    directorMovie = new Director()
+            //    {
+            //        FirstName = model.Director.Split()[0],
+            //        LastName = model.Director.Split()[1]
+            //    };
+            //    //movie.Directors.Add(directorMovie);
+            //    this.context.Directors.Add(directorMovie);
+            //}
+            var directorMovie = this.directors
+                   .CreateDirector(model.Director.Split()[0],
+                   model.Director.Split()[1]);
 
             movie.Title = model.Title;
             movie.Time = model.Time;
