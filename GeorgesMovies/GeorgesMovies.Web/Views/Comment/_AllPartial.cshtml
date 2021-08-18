@@ -29,7 +29,7 @@ else
                                         <p>-> @comment.Message</p>
                                     </div>
                                     <div class="d-flex flex-row float-right">
-                                        @if (comment.UserId == userId)
+                                        @if (comment.UserId == userId || this.User.IsInRole("Admin"))
                                         {
                                             <form method="post">
                                                 <button type="submit"

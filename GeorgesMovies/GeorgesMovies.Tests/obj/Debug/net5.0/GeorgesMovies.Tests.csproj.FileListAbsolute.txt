@@ -542,3 +542,4 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\bin\Deb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\bin\Debug\net5.0\MyTested.AspNetCore.Mvc.ViewFeatures.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\bin\Debug\net5.0\System.IO.Pipelines.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\bin\Debug\net5.0\GeorgesMovies.Web.StaticWebAssets.xml

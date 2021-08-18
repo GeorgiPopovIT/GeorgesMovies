@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using static GeorgesMovies.Web.WebConstants;
+using static GeorgesMovies.Web.Areas.Admin.AdminAreaConstants;
 
 
 namespace GeorgesMovies.Web.Controllers
@@ -47,7 +48,7 @@ namespace GeorgesMovies.Web.Controllers
             }
             this.actors.Add(actorToAdd);
 
-            return RedirectToAction("Manage", "Movie");
+            return RedirectToAction("Manage", "Movie",new { area = AreaName});
         }
 
         [Authorize]

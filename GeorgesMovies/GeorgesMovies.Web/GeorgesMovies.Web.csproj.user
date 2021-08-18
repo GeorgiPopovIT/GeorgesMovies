@@ -8,5 +8,6 @@
     <_SelectedScaffolderCategoryPath>root/Common/RazorPage</_SelectedScaffolderCategoryPath>
     <WebStackScaffolding_DbContextDialogWidth>650,4</WebStackScaffolding_DbContextDialogWidth>
     <WebStackScaffolding_LayoutPageFile>~/Views/Shared/_Layout.cshtml</WebStackScaffolding_LayoutPageFile>
+    <NameOfLastUsedPublishProfile>C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\Properties\PublishProfiles\GeorgesMoviesApp1 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
