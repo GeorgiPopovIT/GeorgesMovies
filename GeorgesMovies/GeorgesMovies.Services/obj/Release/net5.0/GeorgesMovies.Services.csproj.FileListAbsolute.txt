@@ -1,0 +1,15 @@
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\bin\Release\net5.0\GeorgesMovies.Services.deps.json
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\bin\Release\net5.0\GeorgesMovies.Services.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\bin\Release\net5.0\ref\GeorgesMovies.Services.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\bin\Release\net5.0\GeorgesMovies.Services.pdb
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\bin\Release\net5.0\GeorgesMovies.Models.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\bin\Release\net5.0\GeorgesMovies.Models.pdb
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Release\net5.0\GeorgesMovies.Services.csproj.AssemblyReference.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Release\net5.0\GeorgesMovies.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Release\net5.0\GeorgesMovies.Services.AssemblyInfoInputs.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Release\net5.0\GeorgesMovies.Services.AssemblyInfo.cs
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Release\net5.0\GeorgesMovies.Services.csproj.CoreCompileInputs.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Release\net5.0\GeorgesMovies.Services.csproj.CopyComplete
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Release\net5.0\GeorgesMovies.Services.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Release\net5.0\ref\GeorgesMovies.Services.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Release\net5.0\GeorgesMovies.Services.pdb

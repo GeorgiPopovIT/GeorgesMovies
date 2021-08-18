@@ -100,8 +100,8 @@ namespace GeorgesMovies.Web.Controllers
             {
                 return RedirectToAction(nameof(Edit));
             }
-            return RedirectToAction(nameof(Manage),
-                nameof(MovieController),
+            return RedirectToAction("Manage",
+                "Movie",
                 new {area = AdminRoleName});
         }
 
@@ -111,7 +111,9 @@ namespace GeorgesMovies.Web.Controllers
         {
             this.movies.Delete(id);
 
-            return RedirectToAction(nameof(Manage));
+            return RedirectToAction("Manage",
+               "Movie",
+               new { area = AdminRoleName });
         }
     }
 }
