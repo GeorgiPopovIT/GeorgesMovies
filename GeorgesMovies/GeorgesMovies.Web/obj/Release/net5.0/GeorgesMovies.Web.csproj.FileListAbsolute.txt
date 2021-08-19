@@ -289,7 +289,6 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\AutoMapper.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\Humanizer.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\MailKit.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -331,9 +330,7 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\MimeKit.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\Newtonsoft.Json.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\BouncyCastle.Crypto.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\SendGrid.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\StarkbankEcdsa.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\System.Composition.AttributedModel.dll

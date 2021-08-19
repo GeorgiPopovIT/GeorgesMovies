@@ -38,13 +38,11 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\appsettings.json
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.deps.json
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.runtimeconfig.json
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\AutoMapper.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Humanizer.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\MailKit.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -64,7 +62,6 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
@@ -86,9 +83,7 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\MimeKit.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\Newtonsoft.Json.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\BouncyCastle.Crypto.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\SendGrid.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\StarkbankEcdsa.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\System.Composition.AttributedModel.dll
@@ -209,3 +204,4 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery\LICENSE.txt
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.Views.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.Views.pdb
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.deps.json
