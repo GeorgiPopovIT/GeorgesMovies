@@ -9,51 +9,24 @@
         <input class="form-control"id="messageValue" asp-for="Message" placeholder="Comment...">
         <span asp-validation-for="Message" class="small text-danger"></span>
 
-        <button type="submit"
+        @*<button type="submit"
                 class="btn btn-primary"
                 asp-controller="Comment"
                 asp-action="Post"
                 asp-route-movieId="@movieId"
                 >Post
-        </button>
-       @*<input id="btnSubmit"
-              type="submit"
+        </button>*@
+       <input  type="submit"
               class="btn btn-primary"
-              value="Post"
-              />*@
+              value="Submit"/>
 
     </div>
 </form>
 
 @section Scripts{
-    <script>
-        @*$("#clickLink").each(function (el) {
-            $(this).click(function () {
+        <script>
 
-                var value = $(this).attr("#messageValue");
-                var movieId = @movieId;
-                var data = { message: value, movieId: movieId };
-
-                $.ajax({
-                    type: "POST",
-                    url: "api/comment",
-                    data: JSON.stringify(data),
-                    success: function (data) {
-                        console.log(data)
-                    },
-                    contentType:'application/json'
-                });
-            })
-        });*@
-        function btnClick() {
-
-            $(document).ready(function () {
-                $("#btnSubmit").click(function () {
-                    alert("button");
-                });
-            });
-        }
-    </script>
+        </script>
 }
 
 

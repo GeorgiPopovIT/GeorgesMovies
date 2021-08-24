@@ -20,7 +20,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GeorgesMovies</a>
+                <a class="navbar-brand" asp-area=" " asp-controller="Home" asp-action="Index">GeorgesMovies</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -37,7 +37,7 @@
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link text-dark"asp-area=""  asp-controller="Actor" asp-action="All">All actors</a>
+                            <a class="nav-link text-dark"asp-area=""  asp-controller="Actor" asp-action="All">List of actors</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="All">All movies</a>
@@ -54,13 +54,14 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted mb-5">
+
         <div class="container">
-            <div class="float-left">
+            <div style="margin:auto" class="float-left">
                 &copy; @DateTime.UtcNow.Year - GeorgesMovies
                 <a style="margin:310px"
-                   href="https://github.com/GeorgiPopovIT/GeorgesMovies"
-                   >Open Source Code
+                   href="https://github.com/GeorgiPopovIT/GeorgesMovies">
+                    Open Source Code
                 </a>
 
             </div>
@@ -68,7 +69,7 @@
                 Registered Users: @usersCount
             </div>
         </div>
-        
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -18,8 +18,9 @@ namespace GeorgesMovies.Web.Controllers.Api
             this.comments = comments;
         }
         [Authorize]
+        [Route("api/[controller]/Post")]
         [HttpPost]
-        public IActionResult Post(CommentServiceModel model)
+        public IActionResult Post([FromBody]CommentServiceModel model)
         {
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
 
