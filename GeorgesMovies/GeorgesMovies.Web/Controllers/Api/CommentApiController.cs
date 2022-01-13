@@ -1,15 +1,15 @@
-﻿using GeorgesMovies.Models.Models;
-using GeorgesMovies.Services.Comments;
+﻿using GeorgesMovies.Services.Comments;
 using GeorgesMovies.Services.Comments.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Security.Claims;
 
 namespace GeorgesMovies.Web.Controllers.Api
 {
     [ApiController]
-    [Route("api/comment")]
-    public class CommentApiController  :ControllerBase
+    [Route("api/[controller]")]
+    public class CommentApiController : ControllerBase
     {
         private readonly ICommentService comments;
 
@@ -17,16 +17,24 @@ namespace GeorgesMovies.Web.Controllers.Api
         {
             this.comments = comments;
         }
+
         [Authorize]
-        [Route("api/[controller]/Post")]
         [HttpPost]
-        public IActionResult Post([FromBody]CommentServiceModel model)
+        [IgnoreAntiforgeryToken]
+        public ActionResult Post(CommentServiceModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("AllByMovie", "Comment",
+                    new { movieId = model.MovieId });
+            }
+
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
 
             this.comments.Create(userId, model);
 
-            return RedirectToAction("Details","Movie",new {id = model.MovieId });
+            return RedirectToAction("AllByMovie", "Comment",
+            new { movieId = model.MovieId });
         }
     }
 }

@@ -5,28 +5,17 @@
 }
 <form method="post">
     <div class="form-group col-md-4">
-        <label asp-for="Message"  class="font-weight-bold">Enter comment</label>
-        <input class="form-control"id="messageValue" asp-for="Message" placeholder="Comment...">
+        <label asp-for="Message" class="font-weight-bold">Enter comment</label>
+        <input class="form-control" id="messageValue" asp-for="Message" placeholder="Comment...">
         <span asp-validation-for="Message" class="small text-danger"></span>
 
-        @*<button type="submit"
-                class="btn btn-primary"
-                asp-controller="Comment"
-                asp-action="Post"
-                asp-route-movieId="@movieId"
-                >Post
-        </button>*@
-       <input  type="submit"
-              class="btn btn-primary"
-              value="Submit"/>
+        <button type="submit"
+                    class="btn btn-primary"
+                    asp-controller="Comment"
+                    asp-action="Post"
+                    asp-route-movieId="@movieId"
+                    >Post
+            </button>
 
     </div>
 </form>
-
-@section Scripts{
-        <script>
-
-        </script>
-}
-
-

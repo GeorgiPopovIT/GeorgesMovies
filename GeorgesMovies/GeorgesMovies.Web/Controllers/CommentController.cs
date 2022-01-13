@@ -1,5 +1,6 @@
 ﻿using GeorgesMovies.Services.Comments;
 using GeorgesMovies.Services.Comments.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -37,6 +38,15 @@ namespace GeorgesMovies.Web.Controllers
 
             return RedirectToAction("Details",
                  "Movie", new { id = movieId }) ;
+        }
+
+        [Authorize]
+        [IgnoreAntiforgeryToken]
+        public IActionResult AllByMovie(int movieId)
+        {
+            var comments = this.comments.All(movieId);
+
+            return PartialView("_AllPartial",comments);
         }
     }
 }

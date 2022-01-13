@@ -8,7 +8,7 @@ namespace GeorgesMovies.Services.Comments.DTO
     {
         public int Id { get; set; }
         [Required]
-        [MinLength(1)]
+        [MinLength(1,ErrorMessage ="Minumum length of comment have to be {1} symbols.")]
         public string Message { get; set; }
         public DateTime CreatedOn { get; set; }
 

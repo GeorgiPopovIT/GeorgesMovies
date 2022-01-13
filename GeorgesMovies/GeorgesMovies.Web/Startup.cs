@@ -36,7 +36,7 @@ namespace GeorgesMovies.Web
                     this.Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
-
+            
 
             services
                 .AddDefaultIdentity<User>(options =>
@@ -65,7 +65,7 @@ namespace GeorgesMovies.Web
 
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(2);
+                options.IdleTimeout = TimeSpan.FromSeconds(200);
             });
 
             services.AddMvc(options =>
@@ -99,6 +99,7 @@ namespace GeorgesMovies.Web
             app.PrepareDatabase();
 
             app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseSession();
             app.UseRouting();

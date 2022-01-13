@@ -9,8 +9,8 @@ namespace GeorgesMovies.Services.Comments
 
         DetailCommentViewModel All(int movieId);
 
-
         IEnumerable<AllCommentsViewModel> GetAllComments(int movieId);
+
         void Delete(int id);
 
         int GetMovieIdByCommentId(int id);

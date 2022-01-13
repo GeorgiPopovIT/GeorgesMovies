@@ -7,6 +7,8 @@
                      .Select(x => x.FirstName + " " + x.LastName));
 
     var movieId = ViewContext.RouteData.Values["id"];
+
+    var userId = AppExtensions.GetUserId(this.User);
 }
 
 @if (this.TempData.ContainsKey("Message"))
@@ -56,10 +58,82 @@
 
 <div class="mb-3"></div>
 
-<partial name="~/Views/Comment/_PostPartial.cshtml" model="@Model.Comment" />
+@*<partial name="~/Views/Comment/_PostPartial.cshtml" model="@Model.Comment" />*@
+<form method="post" id="postComment">
+    <div class="form-group col-md-4">
+        <label asp-for="Comment.Message" class="font-weight-bold">Enter comment</label>
+        <input class="form-control" id="messageValue" asp-for="Comment.Message" placeholder="Comment...">
+        <span asp-validation-for="Comment.Message" class="small text-danger"></span>
 
+        <button type="submit"
+                class="btn btn-primary">
+            Post
+        </button>
+
+    </div>
+</form>
 
 <div class="mb-4"></div>
 
-<partial name="~/Views/Comment/_AllPartial.cshtml" model="@Model.AllComments" />
+<div id="allComments">
+    @*<partial name="~/Views/Comment/_AllPartial.cshtml" model="@Model.AllComments" />*@
+</div>
 
+
+
+@section Scripts{
+    <script>
+
+        window.onload = (event) => {
+            $("#allComments").load("/Comment/AllByMovie/", { movieId: @movieId });
+        };
+
+
+        const formElement = document.getElementById('postComment');
+
+        formElement.addEventListener('submit', postMessage);
+
+        @*async function postMessage(event) {
+            event.preventDefault();
+
+            const messageValue = document.getElementById('messageValue').value;
+
+
+            const model = {
+                message: messageValue,
+                movieId: @movieId
+            };
+
+            const res = await fetch('/api/CommentApi', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(model)
+            });
+
+        }*@
+         $('#postComment').on('submit', event => {
+            event.preventDefault();
+
+            const messageValue = document.getElementById('messageValue').value;
+
+            const model = {
+                message: messageValue,
+                movieId: @movieId
+                };
+
+             $.ajax({
+                 type: "POST",
+                 url: "/api/CommentApi",
+                 contentType: "application/json",
+                 data: JSON.stringify(model),
+                 success: function (data) {
+
+
+                     $("#allComments").html(data);
+
+                     document.getElementById('messageValue').value = '';
+                 }
+             });
+        });
+    </script>
+}

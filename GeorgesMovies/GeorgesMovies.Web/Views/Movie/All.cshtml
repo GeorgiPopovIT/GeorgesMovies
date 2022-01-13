@@ -1,16 +1,19 @@
 ﻿@model AllMoviesViewModel
-@{ ViewData["Title"] = "All Movies"; }
+@{ 
+    ViewData["Title"] = "All Movies";
+}
 
 
 
 @if (!Model.Movies.Any())
 {
-<h1>There is no such movie/movies</h1>
+    <h1>There is no such movie/movies</h1>
 
-                <a class="btn btn-secondary  float-left"
-                   asp-controller="Movie"
-                   asp-action="All">Go Back
-                </a>
+    <a class="btn btn-secondary  float-left"
+       asp-controller="Movie"
+       asp-action="All">
+        Go Back
+    </a>       
  }
 
 
@@ -22,7 +25,7 @@
         </div>
 
         <div class="form-group float-right col-md-4">
-            <label asp-for="GenreId"></label>
+            <label asp-for="GenreId">Genres</label>
             <select asp-for="GenreId" class="form-control">
                 <option value="">All</option>
                 @foreach (var genre in Model.Genres)
@@ -40,7 +43,7 @@
     </div>
 </form>
 
-<div class="mb-5"></div>
+<div class="mb-4"></div>
 
 <div class="row">
     @foreach (var movie in Model.Movies)
