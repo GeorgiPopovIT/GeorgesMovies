@@ -26,8 +26,4 @@
     <ProjectReference Include="..\GeorgesMovies.Services\GeorgesMovies.Services.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-
 </Project>

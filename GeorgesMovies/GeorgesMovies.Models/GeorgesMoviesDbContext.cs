@@ -27,6 +27,7 @@ namespace GeorgesMovies.Data
         //    if (!optionsBuilder.IsConfigured)
         //    {
         //        optionsBuilder.UseSqlServer("Server=.;Database = GeorgesMovies;Integrated Security = true;");
+        //        optionsBuilder.UseSqlServer("Data Source=SQL5107.site4now.net;Initial Catalog=db_a842fc_georges1912;User Id=db_a842fc_georges1912_admin;Password=aleksneikov1");
         //    }
         //    base.OnConfiguring(optionsBuilder);
         //}

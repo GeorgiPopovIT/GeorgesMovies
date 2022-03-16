@@ -1,20 +1,9 @@
 ﻿@model AllMoviesViewModel
-@{ 
-    ViewData["Title"] = "All Movies";
-}
+@{ ViewData["Title"] = "All Movies"; }
 
 
 
-@if (!Model.Movies.Any())
-{
-    <h1>There is no such movie/movies</h1>
 
-    <a class="btn btn-secondary  float-left"
-       asp-controller="Movie"
-       asp-action="All">
-        Go Back
-    </a>       
- }
 
 
 <form method="get">
@@ -30,20 +19,29 @@
                 <option value="">All</option>
                 @foreach (var genre in Model.Genres)
                 {
-                    <option value="@genre.Id">@genre.Name</option>
-                }
+    <option value="@genre.Id">@genre.Name</option>}
             </select>
         </div>
 
         <input type="submit"
                class="btn btn-info"
-               asp-controller="Movie" 
-               asp-action="All" 
+               asp-controller="Movie"
+               asp-action="All"
                value="Search" />
     </div>
 </form>
 
 <div class="mb-4"></div>
+
+@if (!Model.Movies.Any())
+{
+    <h1>There is no such movie/movies</h1>
+    @*<a class="btn btn-secondary  float-left"
+                       asp-controller="Movie"
+                       asp-action="All">
+                        Go Back
+                    </a>*@
+}
 
 <div class="row">
     @foreach (var movie in Model.Movies)
@@ -55,10 +53,10 @@
             <h5 class="card-title">@movie.Title</h5>
             <p class="card-text">@movie.Overview</p>
             <a asp-controller="Movie"
-               asp-action="Details" 
-               asp-route-id="@movie.Id" 
-               class="btn btn-primary"
-               >Go to trailer
+               asp-action="Details"
+               asp-route-id="@movie.Id"
+               class="btn btn-primary">
+                Go to trailer
             </a>
         </div>
     </div>
@@ -72,8 +70,7 @@
     {
         previousPage = 1;
     }
-    var maxPage = Math.Ceiling((double)Model.TotalMovies / AllMoviesViewModel.MoviesPerPage);
- }
+    var maxPage = Math.Ceiling((double)Model.TotalMovies / AllMoviesViewModel.MoviesPerPage); }
 
 <div class="row">
     <div class="col-md-6">

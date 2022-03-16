@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using static GeorgesMovies.Web.WebConstants;
 using System.Linq;
+using GeorgesMovies.Services;
 
 namespace GeorgesMovies.Web.Infrastructure
 {
@@ -31,6 +32,10 @@ namespace GeorgesMovies.Web.Infrastructure
 
             AddDefaultGenres.SeedGenres(data);
 
+            if (!data.Movies.Any())
+            {
+                Seeder.SeedData(data);
+            }
             SeedAdministrator(servicedProvider);
 
             return app;
@@ -59,7 +64,7 @@ namespace GeorgesMovies.Web.Infrastructure
                     LastName = "Adminov"
                 };
 
-                await userManager.CreateAsync(user,adminPassword);
+                await userManager.CreateAsync(user, adminPassword);
 
                 await userManager.AddToRoleAsync(user, role.Name);
 

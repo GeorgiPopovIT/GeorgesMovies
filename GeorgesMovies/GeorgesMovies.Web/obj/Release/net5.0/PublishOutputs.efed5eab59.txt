@@ -166,6 +166,8 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Services.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Models.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Services.pdb
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.Views.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.Views.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\css\site.css
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\favicon.ico
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\js\site.js
@@ -202,6 +204,4 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery\dist\jquery.min.js
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery\dist\jquery.min.map
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery\LICENSE.txt
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.Views.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.Views.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\PubTmp\Out\GeorgesMovies.Web.deps.json
