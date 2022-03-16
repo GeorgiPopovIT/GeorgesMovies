@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\publish\</_PublishTargetUrl>
+    <History>True|2022-03-16T15:30:15.4532368Z;True|2022-03-16T17:10:37.1373990+02:00;</History>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=SQL5107.site4now.net%3bInitial Catalog=db_a842fc_georges1912%3bUser Id=db_a842fc_georges1912_admin%3bPassword=Admin123</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="GeorgesMovies.Data.GeorgesMoviesDbContext">
+      <Value>Data Source=SQL5107.site4now.net%3bInitial Catalog=db_a842fc_georges1912%3bUser Id=db_a842fc_georges1912_admin%3bPassword=Admin123</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

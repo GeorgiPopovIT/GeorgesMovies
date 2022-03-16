@@ -1,0 +1,10 @@
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Services\Debug\net5.0\GeorgesMovies.Services.deps.json
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Services\Debug\net5.0\GeorgesMovies.Services.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\b\GeorgesMovies.Services\Debug\net5.0\ref\GeorgesMovies.Services.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Services\Debug\net5.0\GeorgesMovies.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Services\Debug\net5.0\GeorgesMovies.Services.AssemblyInfoInputs.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Services\Debug\net5.0\GeorgesMovies.Services.AssemblyInfo.cs
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Services\Debug\net5.0\GeorgesMovies.Services.csproj.CopyComplete
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Services\Debug\net5.0\GeorgesMovies.Services.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Services\Debug\net5.0\ref\GeorgesMovies.Services.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\.vs\GeorgesMovies\v16\lut\0\i\GeorgesMovies.Services\Debug\net5.0\GeorgesMovies.Services.csproj.AssemblyReference.cache

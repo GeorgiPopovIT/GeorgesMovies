@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>GeorgesMovies.Services</id>
+    <version>1.0.0</version>
+    <authors>GeorgesMovies.Services</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="GeorgesMovies.Models" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="AutoMapper" version="10.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Identity.UI" version="5.0.9" exclude="Build,Analyzers" />
+        <dependency id="SendGrid" version="9.24.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\bin\Release\net5.0\GeorgesMovies.Services.dll" target="lib\net5.0\GeorgesMovies.Services.dll" />
+  </files>
+</package>
