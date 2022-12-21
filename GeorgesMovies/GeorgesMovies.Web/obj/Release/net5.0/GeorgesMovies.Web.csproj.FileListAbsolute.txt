@@ -6,7 +6,6 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\GeorgesMovies.Web.runtimeconfig.json
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\GeorgesMovies.Web.runtimeconfig.dev.json
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\GeorgesMovies.Web.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\ref\GeorgesMovies.Web.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\GeorgesMovies.Web.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\refs\Microsoft.AspNetCore.Antiforgery.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
@@ -422,9 +421,9 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.RazorAssemblyInfo.cache
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.RazorAssemblyInfo.cs
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\scopedcss\bundle\GeorgesMovies.Web.styles.css
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\staticwebassets\GeorgesMovies.Web.StaticWebAssets.Manifest.cache
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\staticwebassets\GeorgesMovies.Web.StaticWebAssets.xml
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\scopedcss\bundle\GeorgesMovies.Web.styles.css
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.TagHelpers.input.cache
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.TagHelpers.output.cache
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.RazorCoreGenerate.cache
@@ -460,6 +459,7 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.Views.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.csproj.CopyComplete
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\ref\GeorgesMovies.Web.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.genruntimeconfig.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\ref\GeorgesMovies.Web.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\ref\GeorgesMovies.Web.dll

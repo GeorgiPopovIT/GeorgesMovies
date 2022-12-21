@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="GeorgesMoviesApp1" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Georges\\Desktop\\GeorgesMovies\\GeorgesMovies\\GeorgesMovies\.Web\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
-  </parameter>
-  <parameter name="GeorgesMovies.Data.GeorgesMoviesDbContext" description="" value="Data Source=tcp:georgesmovies1.database.windows.net,1433;Initial Catalog=movies;User Id=georgesmovies1@georgesmovies1.database.windows.net;Password=tc8Ff@Pc;" tags="dbfullsql">
-    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Georges\\Desktop\\GeorgesMovies\\GeorgesMovies\\GeorgesMovies\.Web\\obj\\Release\\net5\.0\\PubTmp\\EFSQLScripts\\GeorgesMovies\.Data\.GeorgesMoviesDbContext\.sql$" />
-  </parameter>
-</parameters>

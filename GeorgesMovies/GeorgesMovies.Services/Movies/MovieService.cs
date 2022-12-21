@@ -219,13 +219,5 @@ namespace GeorgesMovies.Services.Movies
         }
 
 
-        //private void InitializeMapper()
-        //{
-        //    var config = new MapperConfiguration(cfg =>
-        //    {
-        //        cfg.AddProfile<MappingProfile>();
-        //    });
-        //    this.mapper = config.CreateMapper();
-        //}
     }
 }

@@ -54,7 +54,7 @@ namespace GeorgesMovies.Web.Controllers
             });
         }
 
-        [Authorize]
+        [Authorize(Roles = AdminRoleName)]
         [HttpPost]
         public IActionResult Add(MovieServiceFormModel movie)
         {

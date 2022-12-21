@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="GeorgesMoviesApp" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Georges\\Desktop\\GeorgesMovies\\GeorgesMovies\\GeorgesMovies\.Web\\obj\\Release\\net5\.0\\win-x86\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>
