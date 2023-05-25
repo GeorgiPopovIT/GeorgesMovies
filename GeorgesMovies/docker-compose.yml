@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  georgesmovies.web:
+    container_name: georgesMovies_App
+    #image: ${DOCKER_REGISTRY-}georgesmoviesweb
+    image: georgesmovies_app
+    build:
+      context: .
+      dockerfile: GeorgesMovies.Web/Dockerfile
+    ports:
+      - "5000:80"
+    restart: on-failure
+    networks:
+      - georgesmovies_app
+  sqlserver:
+    container_name: sqlserver
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=yourStrong(!)Password
+    volumes:
+      - georgesMovies_db:/var/opt/mssql
+    networks:
+      -  georgesmovies_app
+volumes:
+  georgesMovies_db:
+networks:
+  georgesmovies_app:

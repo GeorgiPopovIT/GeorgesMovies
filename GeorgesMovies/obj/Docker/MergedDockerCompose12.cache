@@ -1,0 +1,40 @@
+name: dockercompose8973453342668393430
+services:
+  georgesmovies.web:
+    build:
+      context: C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies
+      dockerfile: GeorgesMovies.Web/Dockerfile
+    container_name: georgesMovies_App
+    image: georgesmovies_app
+    networks:
+      georgesmovies_app: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5000"
+      protocol: tcp
+    restart: on-failure
+  sqlserver:
+    container_name: sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: yourStrong(!)Password
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      georgesmovies_app: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1433"
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: georgesMovies_db
+      target: /var/opt/mssql
+      volume: {}
+networks:
+  georgesmovies_app:
+    name: dockercompose8973453342668393430_georgesmovies_app
+volumes:
+  georgesMovies_db:
+    name: dockercompose8973453342668393430_georgesMovies_db

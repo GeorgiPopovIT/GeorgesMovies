@@ -462,4 +462,9 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Relea
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\GeorgesMovies.Web.genruntimeconfig.cache
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\ref\GeorgesMovies.Web.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\bin\Release\net5.0\ref\GeorgesMovies.Web.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\staticwebassets\GeorgesMovies.Web.StaticWebAssets.Pack.cache
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\staticwebassets\msbuild.GeorgesMovies.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\staticwebassets\msbuild.build.GeorgesMovies.Web.props
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\staticwebassets\msbuild.buildMultiTargeting.GeorgesMovies.Web.props
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\staticwebassets\msbuild.buildTransitive.GeorgesMovies.Web.props
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Web\obj\Release\net5.0\refint\GeorgesMovies.Web.dll

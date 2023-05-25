@@ -96,7 +96,7 @@ namespace GeorgesMovies.Web
 
                 app.UseHsts();
             }
-            app.PrepareDatabase();
+            //app.PrepareDatabase();
 
             app.UseHttpsRedirection();
             app.UseDefaultFiles();

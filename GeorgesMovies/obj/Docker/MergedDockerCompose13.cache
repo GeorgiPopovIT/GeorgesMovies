@@ -1,0 +1,74 @@
+name: dockercompose8973453342668393430
+services:
+  georgesmovies.web:
+    build:
+      context: C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies
+      dockerfile: GeorgesMovies.Web/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: GeorgesMovies.Web
+    container_name: GeorgesMovies.Web
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    image: georgesmovies_app
+    labels:
+      com.microsoft.visual-studio.project-name: GeorgesMovies.Web
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/GeorgesMovies.Web.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      georgesmovies_app: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5000"
+      protocol: tcp
+    restart: on-failure
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\Georges\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Georges\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Georges\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+  sqlserver:
+    container_name: sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: yourStrong(!)Password
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      georgesmovies_app: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1433"
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: georgesMovies_db
+      target: /var/opt/mssql
+      volume: {}
+networks:
+  georgesmovies_app:
+    name: dockercompose8973453342668393430_georgesmovies_app
+volumes:
+  georgesMovies_db:
+    name: dockercompose8973453342668393430_georgesMovies_db

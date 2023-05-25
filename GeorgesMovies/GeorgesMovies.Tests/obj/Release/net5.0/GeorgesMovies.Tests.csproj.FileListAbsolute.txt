@@ -538,4 +538,4 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\obj\Rel
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\obj\Release\net5.0\GeorgesMovies.Tests.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\obj\Release\net5.0\GeorgesMovies.Tests.genruntimeconfig.cache
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\obj\Release\net5.0\ref\GeorgesMovies.Tests.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\bin\Release\net5.0\ref\GeorgesMovies.Tests.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Tests\obj\Release\net5.0\refint\GeorgesMovies.Tests.dll

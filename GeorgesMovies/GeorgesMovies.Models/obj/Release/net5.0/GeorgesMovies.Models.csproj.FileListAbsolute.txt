@@ -12,4 +12,4 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Re
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Release\net5.0\GeorgesMovies.Models.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Release\net5.0\GeorgesMovies.Models.genruntimeconfig.cache
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Release\net5.0\ref\GeorgesMovies.Models.dll
-C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\bin\Release\net5.0\ref\GeorgesMovies.Models.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Models\obj\Release\net5.0\refint\GeorgesMovies.Models.dll
