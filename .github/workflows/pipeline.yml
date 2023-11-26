@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 5.0.x
-        path: ./GeorgesMovies/GeorgesMovies.Web
+        cache-dependency-path: ./GeorgesMovies/GeorgesMovies.Web
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
