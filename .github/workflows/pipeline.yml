@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: GeorgesMovies/GeorgesMovies.sln
+        working-directory: GeorgesMovies/GeorgesMovies.Web
 
     steps:
     - uses: actions/checkout@v3
