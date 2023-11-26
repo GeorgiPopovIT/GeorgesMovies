@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: GeorgesMovies.Web/
+        working-directory: GeorgesMovies.Web/Georges.Web.csproj
 
     steps:
     - uses: actions/checkout@v3
