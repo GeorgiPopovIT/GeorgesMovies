@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: /GeorgesMovies.Web/
+        working-directory: ./GeorgesMovies/
 
     steps:
     - uses: actions/checkout@v3
@@ -19,7 +19,6 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 5.0.x
-        cache-dependency-path: ./GeorgesMovies/GeorgesMovies.Web
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
