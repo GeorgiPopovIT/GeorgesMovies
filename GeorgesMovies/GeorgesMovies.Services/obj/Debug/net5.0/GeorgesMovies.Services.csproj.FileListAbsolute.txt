@@ -13,3 +13,4 @@ C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Debug\net5.0\refint\GeorgesMovies.Services.dll
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Debug\net5.0\GeorgesMovies.Services.pdb
 C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Debug\net5.0\ref\GeorgesMovies.Services.dll
+C:\Users\Georges\Desktop\GeorgesMovies\GeorgesMovies\GeorgesMovies.Services\obj\Debug\net5.0\GeorgesMovies.Services.sourcelink.json

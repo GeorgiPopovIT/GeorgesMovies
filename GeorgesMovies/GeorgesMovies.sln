@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeorgesMovies.Services", "G
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeorgesMovies.Tests", "GeorgesMovies.Tests\GeorgesMovies.Tests.csproj", "{A02E5B93-5FEF-40EA-A9EA-F3BA23346495}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2455BB66-24A4-40A4-906B-71DD8FCDD75E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{A02E5B93-5FEF-40EA-A9EA-F3BA23346495}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A02E5B93-5FEF-40EA-A9EA-F3BA23346495}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A02E5B93-5FEF-40EA-A9EA-F3BA23346495}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2455BB66-24A4-40A4-906B-71DD8FCDD75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2455BB66-24A4-40A4-906B-71DD8FCDD75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2455BB66-24A4-40A4-906B-71DD8FCDD75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2455BB66-24A4-40A4-906B-71DD8FCDD75E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
