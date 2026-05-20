@@ -12,6 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("GeorgesMovies.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\Georges\\Desktop\\GeorgesMovies\\GeorgesMovies\\GeorgesMovies.Models", "GeorgesMovies.Models.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("GeorgesMovies.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\Georges\\Desktop\\GeorgesMovies\\GeorgesMovies\\GeorgesMovies.Services", "GeorgesMovies.Services.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("GeorgesMovies.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\Georges\\Desktop\\GeorgesMovies\\GeorgesMovies\\GeorgesMovies.Web", "GeorgesMovies.Web.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("GeorgesMovies.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

@@ -1,0 +1,16 @@
+## Build results
+bin/
+obj/
+
+## Visual Studio
+.vs/
+.vscode/
+
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Docker
+Dockerfile*
+docker-compose*
+Docker/
