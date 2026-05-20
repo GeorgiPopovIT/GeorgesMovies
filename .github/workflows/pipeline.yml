@@ -9,10 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./GeorgesMovies
-
+    #defaults:
+    #  run:
+       # working-directory: GeorgesMovies
+       
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -21,9 +21,10 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: /GeorgesMovies.Web
+      working-directory: GeorgesMovies/GeorgesMovies.Web
     - name: Build
       run: dotnet build --no-restore
+      working-directory: GeorgesMovies/GeorgesMovies.Web
     - name: Test
-      run: dotnet test --no-build --verbosity normal
-      working-directory: ./GeorgesMovies.Tests
+      run: dotnet test
+      working-directory: GeorgesMovies/GeorgesMovies.Tests

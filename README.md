@@ -1,3 +1,5 @@
+[![Build and Test](https://github.com/GeorgiPopovIT/GeorgesMovies/actions/workflows/pipeline.yml/badge.svg)](https://github.com/GeorgiPopovIT/GeorgesMovies/actions/workflows/pipeline.yml)
+
 # GeorgesMovies
 ASP.NET Core Project
 
